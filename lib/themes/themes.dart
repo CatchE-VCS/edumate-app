@@ -31,6 +31,33 @@ class AppTheme {
         onError: LightColor.titleTextColor,
         brightness: Brightness.dark),
   );
+static ThemeData darkTheme = ThemeData.dark().copyWith(
+    // primarySwatch: Colors.blue,
+    backgroundColor: LightColor.background,
+    scaffoldBackgroundColor: LightColor.background,
+    primaryColor: LightColor.purple,
+    primaryColorDark: LightColor.Darker,
+    primaryColorLight: LightColor.brighter,
+    cardTheme: const CardTheme(color: LightColor.background),
+    // textTheme: TextTheme(display1: TextStyle(color: LightColor.black)),
+    iconTheme: const IconThemeData(color: LightColor.lightblack),
+    bottomAppBarColor: LightColor.background,
+    dividerColor: LightColor.lightGrey,
+    colorScheme: const ColorScheme(
+        primary: LightColor.purple,
+        primaryVariant: LightColor.purple,
+        secondary: LightColor.lightBlue,
+        secondaryVariant: LightColor.darkBlue,
+        surface: LightColor.background,
+        background: LightColor.background,
+        error: Colors.red,
+        onPrimary: LightColor.Darker,
+        onSecondary: LightColor.background,
+        onSurface: LightColor.Darker,
+        onBackground: LightColor.titleTextColor,
+        onError: LightColor.titleTextColor,
+        brightness: Brightness.dark),
+  );
 
   static TextStyle titleStyle =
       const TextStyle(color: LightColor.titleTextColor, fontSize: 16);
