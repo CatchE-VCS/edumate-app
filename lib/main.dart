@@ -4,16 +4,15 @@ import 'package:edumate/src/settings/settings_service.dart';
 
 void main() async {
   final settingsController = SettingsController(SettingsService());
-
   await settingsController.loadSettings();
   runApp(MyApp(
-    //settingsController: settingsController,
+    settingsController: settingsController,
   ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  //final SettingsController settingsController;
+  const MyApp({super.key, required this.settingsController});
+  final SettingsController settingsController;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +45,6 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-       
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -61,10 +59,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: () {},
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), 
+      ),
     );
   }
 }
