@@ -1,6 +1,7 @@
 import 'package:edumate/helpers/quad-clipper.dart';
 import 'package:edumate/pages/recommended.dart';
 import 'package:edumate/themes/light_color.dart';
+import 'package:edumate/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -43,10 +44,11 @@ class HomePage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Icon(
-                            Icons.keyboard_arrow_left,
+                          IconButton(
+                            icon: Icon(Icons.keyboard_arrow_left, size: 40,),
                             color: Colors.white,
-                            size: 40,
+                            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DrawerScreen()),
+                           )
                           ),
                           SizedBox(height: 10),
                           Row(
