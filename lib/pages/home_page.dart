@@ -45,7 +45,8 @@ class HomePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           IconButton(
-                            icon: Icon(Icons.keyboard_arrow_left, size: 40,),
+                            iconSize: 35,
+                            icon: Image.asset("assets/icons/drawer_button.png"),
                             color: Colors.white,
                             onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DrawerScreen()),
                            )
