@@ -9,11 +9,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:edumate/main.dart';
+import 'package:edumate/src/settings/settings_controller.dart';
+import 'package:edumate/src/settings/settings_service.dart';
+void main() async {
+  final settingsController = SettingsController(SettingsService());
 
-void main() {
+  await settingsController.loadSettings();
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(MyApp(settingsController: settingsController,));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
