@@ -259,7 +259,7 @@ class HomePage extends StatelessWidget {
                     left: 10,
                     child: CircleAvatar(
                       backgroundColor: Colors.grey.shade300,
-                      backgroundImage: NetworkImage(imgPath),
+                      // backgroundImage: NetworkImage(imgPath),
                     )),
                 Positioned(
                   bottom: 10,
