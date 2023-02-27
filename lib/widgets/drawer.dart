@@ -85,6 +85,16 @@ class DrawerScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+                  SizedBox(height: 35,),
+                  Container(
+                    child: Row(
+                      children: [
+                        SizedBox(height: 37,child: Image.asset("assets/icons/settings_icon.png")),
+                        SizedBox(width: 35,),
+                        Text("Settings", style: TextStyle(fontSize: 15, color: Colors.white),)
+                      ],
+                    ),
+                  ),
                 ],
               )
             ],
@@ -95,7 +105,7 @@ class DrawerScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Row(
           children: [
-            Icon(Icons.home_filled, color: Colors.white,),
+          SizedBox(height: 37,child: Image.asset("assets/icons/logout_icon.png")),
             SizedBox(width: 35,),
             Text("Log out", style: TextStyle(fontSize: 15, color: Colors.white),)
           ],
