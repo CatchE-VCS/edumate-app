@@ -7,13 +7,13 @@ void main() async {
 
   await settingsController.loadSettings();
   runApp(MyApp(
-    settingsController: settingsController,
+    //settingsController: settingsController,
   ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key, required this.settingsController});
-  final SettingsController settingsController;
+  const MyApp({super.key});
+  //final SettingsController settingsController;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       darkTheme: ThemeData.dark(),
-      themeMode: settingsController.themeMode,
+      //themeMode: settingsController.themeMode,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
