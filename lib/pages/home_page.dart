@@ -1,6 +1,7 @@
 import 'package:edumate/helpers/quad-clipper.dart';
 import 'package:edumate/pages/profile_page.dart';
 import 'package:edumate/pages/recommended.dart';
+import 'package:edumate/pages/skill_page.dart';
 import 'package:edumate/themes/light_color.dart';
 import 'package:edumate/widgets/drawer.dart';
 import 'package:flutter/material.dart';
@@ -130,16 +131,19 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            _card(context,
-                primary: LightColor.orange,
-                backWidget:
-                    _decorationContainerA(LightColor.lightOrange, 50, -30),
-                chipColor: LightColor.orange,
-                chipText1: "Find the right degree for you",
-                chipText2: "8 Cources",
-                isPrimaryCard: true,
-                imgPath:
-                    "https://d1mo3tzxttab3n.cloudfront.net/static/img/shop/560x580/vint0080.jpg"),
+            InkWell(
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => SkillScreen())),
+              child: _card(context,
+                  primary: LightColor.orange,
+                  backWidget:
+                      _decorationContainerA(LightColor.lightOrange, 50, -30),
+                  chipColor: LightColor.orange,
+                  chipText1: "Find the right skill for you",
+                  chipText2: "8 Cources",
+                  isPrimaryCard: true,
+                  imgPath:
+                      "https://d1mo3tzxttab3n.cloudfront.net/static/img/shop/560x580/vint0080.jpg"),
+            ),
             _card(context,
                 primary: Colors.white,
                 chipColor: LightColor.seeBlue,
