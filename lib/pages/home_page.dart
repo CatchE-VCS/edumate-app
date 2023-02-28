@@ -1,6 +1,6 @@
 import 'package:edumate/helpers/quad-clipper.dart';
 import 'package:edumate/pages/profile_page.dart';
-import 'package:edumate/pages/recommended.dart';
+import 'package:edumate/pages/reel/home_page.dart';
 import 'package:edumate/themes/light_color.dart';
 import 'package:edumate/widgets/drawer.dart';
 import 'package:flutter/material.dart';
@@ -529,7 +529,7 @@ class HomePage extends StatelessWidget {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => RecomendedPage(),
+                builder: (context) => HomeScreen(),
               ),
             );
           }
