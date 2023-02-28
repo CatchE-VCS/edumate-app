@@ -49,13 +49,13 @@ class HomePage extends StatelessWidget {
                           IconButton(
                               iconSize: 35,
                               icon:
-                              Image.asset("assets/icons/drawer_button.png"),
+                                  Image.asset("assets/icons/drawer_button.png"),
                               color: Colors.white,
                               onPressed: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => DrawerScreen()),
-                              )),
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => DrawerScreen()),
+                                  )),
                           SizedBox(height: 10),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -102,10 +102,10 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _categoryRow(
-      String title,
-      Color primary,
-      Color textColor,
-      ) {
+    String title,
+    Color primary,
+    Color textColor,
+  ) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20),
       height: 30,
@@ -133,18 +133,19 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SkillScreen()))
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SkillScreen()));
               },
               child: _card(context,
                   primary: LightColor.orange,
                   backWidget:
-                  _decorationContainerA(LightColor.lightOrange, 50, -30),
+                      _decorationContainerA(LightColor.lightOrange, 50, -30),
                   chipColor: LightColor.orange,
                   chipText1: "Find the right skill for you",
                   chipText2: "8 Cources",
                   isPrimaryCard: true,
                   imgPath:
-                  "https://d1mo3tzxttab3n.cloudfront.net/static/img/shop/560x580/vint0080.jpg"),
+                      "https://d1mo3tzxttab3n.cloudfront.net/static/img/shop/560x580/vint0080.jpg"),
             ),
             _card(context,
                 primary: Colors.white,
@@ -153,7 +154,7 @@ class HomePage extends StatelessWidget {
                 chipText1: "Become a data scientist",
                 chipText2: "8 Cources",
                 imgPath:
-                "https://hips.hearstapps.com/esquireuk.cdnds.net/16/39/980x980/square-1475143834-david-gandy.jpg?resize=480:*"),
+                    "https://hips.hearstapps.com/esquireuk.cdnds.net/16/39/980x980/square-1475143834-david-gandy.jpg?resize=480:*"),
             _card(context,
                 primary: Colors.white,
                 chipColor: LightColor.lightOrange,
@@ -161,7 +162,7 @@ class HomePage extends StatelessWidget {
                 chipText1: "Become a digital marketer",
                 chipText2: "8 Cources",
                 imgPath:
-                "https://www.visafranchise.com/wp-content/uploads/2019/05/patrick-findaro-visa-franchise-square.jpg"),
+                    "https://www.visafranchise.com/wp-content/uploads/2019/05/patrick-findaro-visa-franchise-square.jpg"),
             _card(context,
                 primary: Colors.white,
                 chipColor: LightColor.seeBlue,
@@ -171,7 +172,7 @@ class HomePage extends StatelessWidget {
                 chipText1: "Become a machine learner",
                 chipText2: "8 Cources",
                 imgPath:
-                "https://d1mo3tzxttab3n.cloudfront.net/static/img/shop/560x580/vint0080.jpg"),
+                    "https://d1mo3tzxttab3n.cloudfront.net/static/img/shop/560x580/vint0080.jpg"),
           ],
         ),
       ),
@@ -197,7 +198,7 @@ class HomePage extends StatelessWidget {
                 chipText2: "8 Cources",
                 isPrimaryCard: true,
                 imgPath:
-                "https://www.reiss.com/media/product/946/218/silk-paisley-printed-pocket-square-mens-morocco-in-pink-red-20.jpg?format=jpeg&auto=webp&quality=85&width=1200&height=1200&fit=bounds"),
+                    "https://www.reiss.com/media/product/946/218/silk-paisley-printed-pocket-square-mens-morocco-in-pink-red-20.jpg?format=jpeg&auto=webp&quality=85&width=1200&height=1200&fit=bounds"),
             _card(context,
                 primary: Colors.white,
                 chipColor: LightColor.lightpurple,
@@ -210,7 +211,7 @@ class HomePage extends StatelessWidget {
                 chipText1: "Bussiness foundation",
                 chipText2: "8 Cources",
                 imgPath:
-                "https://i.dailymail.co.uk/i/pix/2016/08/05/19/36E9139400000578-3725856-image-a-58_1470422921868.jpg"),
+                    "https://i.dailymail.co.uk/i/pix/2016/08/05/19/36E9139400000578-3725856-image-a-58_1470422921868.jpg"),
             _card(context,
                 primary: Colors.white,
                 chipColor: LightColor.lightOrange,
@@ -219,7 +220,7 @@ class HomePage extends StatelessWidget {
                 chipText1: "Excel skill for business",
                 chipText2: "8 Cources",
                 imgPath:
-                "https://www.reiss.com/media/product/945/066/03-2.jpg?format=jpeg&auto=webp&quality=85&width=632&height=725&fit=bounds"),
+                    "https://www.reiss.com/media/product/945/066/03-2.jpg?format=jpeg&auto=webp&quality=85&width=632&height=725&fit=bounds"),
             _card(context,
                 primary: Colors.white,
                 chipColor: LightColor.seeBlue,
@@ -231,7 +232,7 @@ class HomePage extends StatelessWidget {
                 chipText1: "Beacame a data analyst",
                 chipText2: "8 Cources",
                 imgPath:
-                "https://d1mo3tzxttab3n.cloudfront.net/static/img/shop/560x580/vint0080.jpg"),
+                    "https://d1mo3tzxttab3n.cloudfront.net/static/img/shop/560x580/vint0080.jpg"),
           ],
         ),
       ),
@@ -240,12 +241,12 @@ class HomePage extends StatelessWidget {
 
   Widget _card(BuildContext context,
       {Color primary = Colors.redAccent,
-        String imgPath = "",
-        String chipText1 = '',
-        String chipText2 = '',
-        required Widget backWidget,
-        Color chipColor = LightColor.orange,
-        bool isPrimaryCard = false}) {
+      String imgPath = "",
+      String chipText1 = '',
+      String chipText2 = '',
+      required Widget backWidget,
+      Color chipColor = LightColor.orange,
+      bool isPrimaryCard = false}) {
     final width = MediaQuery.of(context).size.width;
     ;
     return Container(
