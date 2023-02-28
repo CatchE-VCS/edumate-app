@@ -1,4 +1,5 @@
 import 'package:edumate/helpers/quad-clipper.dart';
+import 'package:edumate/pages/profile_page.dart';
 import 'package:edumate/pages/recommended.dart';
 import 'package:edumate/themes/light_color.dart';
 import 'package:edumate/widgets/drawer.dart';
@@ -45,12 +46,15 @@ class HomePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           IconButton(
-                            iconSize: 35,
-                            icon: Image.asset("assets/icons/drawer_button.png"),
-                            color: Colors.white,
-                            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DrawerScreen()),
-                           )
-                          ),
+                              iconSize: 35,
+                              icon:
+                                  Image.asset("assets/icons/drawer_button.png"),
+                              color: Colors.white,
+                              onPressed: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => DrawerScreen()),
+                                  )),
                           SizedBox(height: 10),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -514,12 +518,21 @@ class HomePage extends StatelessWidget {
           _bottomIcons(Icons.person),
         ],
         onTap: (index) {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => RecomendedPage(),
-            ),
-          );
+          if (index == 3) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProfilePage(),
+              ),
+            );
+          } else {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => RecomendedPage(),
+              ),
+            );
+          }
         },
       ),
       body: SingleChildScrollView(
