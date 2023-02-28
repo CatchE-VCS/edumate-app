@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:edumate/src/settings/settings_controller.dart';
 import 'package:edumate/src/settings/settings_service.dart';
+import 'package:overlay_support/overlay_support.dart';
 import 'pages/home_page.dart';
 import 'themes/themes.dart';
 
@@ -18,12 +19,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      darkTheme: AppTheme.darkTheme,
-      theme: AppTheme.lightTheme,
-      home: const HomePage(),
-      debugShowCheckedModeBanner: false,
+    return OverlaySupport(
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        darkTheme: AppTheme.darkTheme,
+        theme: AppTheme.lightTheme,
+        home: const HomePage(),
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }
