@@ -3,6 +3,7 @@ import 'package:edumate/pages/profile_page.dart';
 import 'package:edumate/pages/reel/home_page.dart';
 import 'package:edumate/pages/skill_page.dart';
 import 'package:edumate/themes/light_color.dart';
+import 'package:edumate/widgets/bottom_nav.dart';
 import 'package:edumate/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -510,38 +511,39 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        selectedItemColor: LightColor.purple,
-        unselectedItemColor: Colors.grey.shade300,
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
-        currentIndex: 0,
-        items: [
-          _bottomIcons(Icons.home),
-          _bottomIcons(Icons.star_border),
-          _bottomIcons(Icons.book),
-          _bottomIcons(Icons.person),
-        ],
-        onTap: (index) {
-          if (index == 3) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const ProfilePage(),
-              ),
-            );
-          } else {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HomeScreen(),
-              ),
-            );
-          }
-        },
-      ),
+      bottomNavigationBar: const BottomNav(),
+      // BottomNavigationBar(
+      //   showSelectedLabels: false,
+      //   showUnselectedLabels: false,
+      //   selectedItemColor: LightColor.purple,
+      //   unselectedItemColor: Colors.grey.shade300,
+      //   type: BottomNavigationBarType.fixed,
+      //   backgroundColor: Colors.white,
+      //   currentIndex: 0,
+      //   items: [
+      //     _bottomIcons(Icons.home),
+      //     _bottomIcons(Icons.star_border),
+      //     _bottomIcons(Icons.book),
+      //     _bottomIcons(Icons.person),
+      //   ],
+      //   onTap: (index) {
+      //     if (index == 3) {
+      //       Navigator.push(
+      //         context,
+      //         MaterialPageRoute(
+      //           builder: (context) => const ProfilePage(),
+      //         ),
+      //       );
+      //     } else {
+      //       Navigator.push(
+      //         context,
+      //         MaterialPageRoute(
+      //           builder: (context) => HomeScreen(),
+      //         ),
+      //       );
+      //     }
+      //   },
+      // ),
       body: SingleChildScrollView(
         child: Container(
           child: Column(
