@@ -533,7 +533,7 @@ class HomePage extends StatelessWidget {
               ),
             );
           } else {
-            Navigator.pushReplacement(
+            Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => HomeScreen(),
