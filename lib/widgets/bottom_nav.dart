@@ -39,14 +39,14 @@ class _BottomNavState extends State<BottomNav> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.of(widget.context).size.width * 0.07,
+          horizontal: MediaQuery.of(widget.context).size.width * 0.06,
           vertical: 10),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Container(
           height: 56,
           padding: const EdgeInsets.symmetric(
-            horizontal: 6.0,
+            horizontal: 7.0,
           ),
           decoration: BoxDecoration(
             gradient: LinearGradient(
