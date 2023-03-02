@@ -1,0 +1,4 @@
+GET https://rapidapi.com/url=&title?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DIfNB5RTxnhI&title=Call%20of%20Duty%20%3A%20Modern%20Warfare%202%20Remastered%20-%20All%20Weapon%20Reload%20Animations%20in%204%20Minutes HTTP/1.1
+X-Rapidapi-Key: 78d83b60c8mshe5f3c4b35aa6bc2p131eb3jsne0ebd6ea2f41
+X-Rapidapi-Host: youtube-to-mp4.p.rapidapi.com
+Host: youtube-to-mp4.p.rapidapi.com

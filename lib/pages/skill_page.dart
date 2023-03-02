@@ -16,80 +16,85 @@ class _SkillScreenState extends State<SkillScreen> {
       appBar: AppBar(
         backgroundColor: Color(0xff30547c),
         elevation: 0,
-
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-
         children: [
           Container(
             height: 250,
-            decoration:  BoxDecoration(
-              boxShadow: kElevationToShadow[8],
-                color: Color(0xff30547c),
-                borderRadius: BorderRadius.only(
+            decoration: BoxDecoration(
+                boxShadow: kElevationToShadow[8],
+                color: const Color(0xff30547c),
+                borderRadius: const BorderRadius.only(
                     bottomRight: Radius.circular(20),
-                    bottomLeft: Radius.circular(20)
-                )
-            ),
+                    bottomLeft: Radius.circular(20))),
             child: Column(
               children: [
                 const Padding(
                   padding: EdgeInsets.only(left: 40, right: 40),
-                  child: Text("What skills do you currently have ?",
+                  child: Text(
+                    "What skills do you currently have ?",
                     style: TextStyle(fontSize: 35, color: Colors.white),
                   ),
                 ),
                 InkWell(
                   onTap: () {
                     // method to show the search bar
-
                     showSearch(
                         context: context,
                         // delegate to customize the search bar
-                        delegate: CustomSearchDelegate()
-                    );
+                        delegate: CustomSearchDelegate());
                   },
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 36, right: 36, top: 20),
+                    padding:
+                        const EdgeInsets.only(left: 36, right: 36, top: 20),
                     child: Container(
-                      padding: EdgeInsets.all(9),
+                      padding: const EdgeInsets.all(9),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
                         boxShadow: kElevationToShadow[8],
-
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(3.0),
                         child: Row(
-                          children: [
+                          children: const [
                             Icon(Icons.search),
                             Padding(
-                              padding: const EdgeInsets.only(left: 6.0),
+                              padding: EdgeInsets.only(left: 6.0),
                               child: Text("Search skill or domain"),
                             ),
-                            SizedBox(width: 70,),
-
+                            SizedBox(
+                              width: 70,
+                            ),
                           ],
                         ),
                       ),
                     ),
                   ),
-
                 ),
-
               ],
             ),
           ),
-          SizedBox(height: MediaQuery.of(context).size.height*0.46,),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.46,
+          ),
           Padding(
             padding: const EdgeInsets.only(left: 16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Don't have any skills yet ?", style: TextStyle(fontSize: 26,),),
-                Text("Don’t worry let’s explore\nyour interests !!", style: TextStyle(fontSize: 17, color: Colors.grey),)
+              children: const [
+                Text(
+                  "Don't have any skills yet ?",
+                  style: TextStyle(
+                    fontSize: 26,
+                    color: Colors.black
+                  ),
+                ),
+                Text(
+                  "Don’t worry let’s explore\nyour interests !!",
+                  style: TextStyle(fontSize: 17, color: Colors.grey),
+                )
               ],
             ),
           ),
@@ -98,7 +103,6 @@ class _SkillScreenState extends State<SkillScreen> {
     );
   }
 }
-
 
 class CustomSearchDelegate extends SearchDelegate {
 // Demo list to show querying
@@ -138,7 +142,7 @@ class CustomSearchDelegate extends SearchDelegate {
         onPressed: () {
           query = '';
         },
-        icon: Icon(Icons.clear),
+        icon: const Icon(Icons.clear),
       ),
     ];
   }
@@ -168,7 +172,9 @@ class CustomSearchDelegate extends SearchDelegate {
       itemBuilder: (context, index) {
         var result = matchQuery[index];
         return ListTile(
-          title: Text(result),
+          title: Text(result,
+            style: TextStyle(color: Colors.black),
+          ),
         );
       },
     );
@@ -189,7 +195,7 @@ class CustomSearchDelegate extends SearchDelegate {
       itemBuilder: (context, index) {
         var result = matchQuery[index];
         return ListTile(
-          title: Text(result),
+          title: Text(result, style: const TextStyle(color: Colors.black),),
         );
       },
     );
