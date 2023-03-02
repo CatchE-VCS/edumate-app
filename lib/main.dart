@@ -1,3 +1,6 @@
+import 'package:edumate/pages/profile_page.dart';
+import 'package:edumate/pages/reel/home_page.dart';
+import 'package:edumate/pages/skill_page.dart';
 import 'package:flutter/material.dart';
 import 'package:edumate/src/settings/settings_controller.dart';
 import 'package:edumate/src/settings/settings_service.dart';
@@ -26,6 +29,11 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.lightTheme,
         home: const HomePage(),
         debugShowCheckedModeBanner: false,
+        routes: {
+          '/skill': (context) => const SkillScreen(),
+          '/profile': (context) => const ProfilePage(),
+          '/reels':(context) => const HomeScreen(),
+        },
       ),
     );
   }

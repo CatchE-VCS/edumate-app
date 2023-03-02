@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class BottomNav extends StatefulWidget {
-  const BottomNav({super.key});
-
+  const BottomNav({super.key, required this.context});
+  // final double width;
+  final BuildContext context;
   @override
   State<BottomNav> createState() => _BottomNavState();
 }
@@ -27,12 +28,15 @@ class _BottomNavState extends State<BottomNav> {
         }
       }
     });
+    if (x == 0) Navigator.of(widget.context).pushNamed('/');
+    if (x == 1) Navigator.of(widget.context).pushNamed('/skill');
+    if (x == 2) Navigator.of(widget.context).pushNamed('/reels');
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.05),
+      padding: EdgeInsets.all(MediaQuery.of(widget.context).size.width * 0.09),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Container(
@@ -42,7 +46,7 @@ class _BottomNavState extends State<BottomNav> {
           ),
           decoration: BoxDecoration(
             border: Border.all(color: Color(0xffEEEEEE), width: 1),
-            borderRadius: BorderRadius.all(Radius.elliptical(20, 20)),
+            borderRadius: const BorderRadius.all(Radius.elliptical(20, 20)),
             color: Colors.white,
             boxShadow: [
               BoxShadow(
