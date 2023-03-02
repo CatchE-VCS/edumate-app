@@ -30,12 +30,15 @@ class _BottomNavState extends State<BottomNav> {
     if (x == 0) Navigator.of(widget.context).pushNamed('/');
     if (x == 1) Navigator.of(widget.context).pushNamed('/skill');
     if (x == 2) Navigator.of(widget.context).pushNamed('/reels');
+    if (x == 4) Navigator.of(widget.context).pushNamed('/coins');
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(MediaQuery.of(widget.context).size.width * 0.09),
+      padding: EdgeInsets.symmetric(
+          horizontal: MediaQuery.of(widget.context).size.width * 0.09,
+          vertical: 10),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Container(
@@ -44,7 +47,17 @@ class _BottomNavState extends State<BottomNav> {
             horizontal: 8.0,
           ),
           decoration: BoxDecoration(
-            border: Border.all(color: Color(0xffEEEEEE), width: 1),
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFF1F0E14),
+                  Color(0xBF37194C),
+                  Color(0xB34E2178),
+                  Color(0xD934134F),
+                  Color(0xFF1F0E24),
+                ]),
+            // border: Border.all(color: Color(0xffEEEEEE), width: 1),
             borderRadius: const BorderRadius.all(Radius.elliptical(20, 20)),
             color: Colors.white,
             boxShadow: [
@@ -75,7 +88,21 @@ class _BottomNavState extends State<BottomNav> {
               BottomNavTab(
                 val: 2,
                 icon: Icons.pie_chart_outline,
-                text: "Analysis",
+                text: "Reels",
+                selected: selected[2],
+                callback: changeBottomtab,
+              ),
+              BottomNavTab(
+                val: 3,
+                icon: Icons.pie_chart_outline,
+                text: "Reels",
+                selected: selected[2],
+                callback: changeBottomtab,
+              ),
+              BottomNavTab(
+                val: 4,
+                icon: Icons.pie_chart_outline,
+                text: "Coins",
                 selected: selected[2],
                 callback: changeBottomtab,
               ),

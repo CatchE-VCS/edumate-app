@@ -1,3 +1,4 @@
+import 'package:edumate/pages/coins.dart';
 import 'package:edumate/pages/newhome.dart';
 import 'package:edumate/pages/profile_page.dart';
 import 'package:edumate/pages/reel/home_page.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
           '/skill': (context) => const SkillScreen(),
           '/profile': (context) => const ProfilePage(),
           '/reels': (context) => const HomeScreen(),
+          '/coins': (context) => const Coins(),
         },
       ),
     );
