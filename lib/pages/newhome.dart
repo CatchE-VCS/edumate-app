@@ -1,5 +1,6 @@
 import 'package:edumate/widgets/bottom_nav.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NewHomePage extends StatelessWidget {
   const NewHomePage({Key? key}) : super(key: key);
@@ -149,79 +150,91 @@ class NewHomePage extends StatelessWidget {
                 SizedBox(
                   height: 14,
                 ),
-                Container(
-                  width: 334,
-                  height: 163,
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Color(0xFFDF77CF),
-                            Color(0xE6B24DA2),
-                            Color(0xCC9A478D),
-                          ]),
-                      borderRadius: BorderRadius.all(Radius.circular(25))),
-                  child: Row(children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          width: 16,
-                          height: 14,
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 16),
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(70)),
-                              color: Colors.white),
-                          width: 86,
-                          height: 25,
-                          child: Center(
-                              child: Text(
-                            "Best Selling",
-                            style: TextStyle(
-                                color: Color(0xFFDF77CF), fontSize: 13),
-                          )),
-                        ),
-                        SizedBox(
-                          height: 9,
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 20),
-                          child: Text(
-                            "Graphic Design :\n Core Principles for\n Visual Design",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w700),
+                GestureDetector(
+                  onTap: () async {
+                    const url =
+                        'https://www.udemy.com/course/photoshop-masking/';
+                    final uri = Uri.parse(url);
+                    if (await canLaunchUrl(uri)) {
+                      await launchUrl(uri);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
+                  child: Container(
+                    width: 334,
+                    height: 163,
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Color(0xFFDF77CF),
+                              Color(0xE6B24DA2),
+                              Color(0xCC9A478D),
+                            ]),
+                        borderRadius: BorderRadius.all(Radius.circular(25))),
+                    child: Row(children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            width: 16,
+                            height: 14,
                           ),
-                        ),
-                        SizedBox(
-                          height: 23,
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(left: 24),
-                              child: Image.asset('assets/images/second.png'),
-                            ),
-                            SizedBox(
-                              width: 7,
-                            ),
-                            Text(
-                              "4.9",
+                          Container(
+                            margin: EdgeInsets.only(left: 16),
+                            decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(70)),
+                                color: Colors.white),
+                            width: 86,
+                            height: 25,
+                            child: Center(
+                                child: Text(
+                              "Best Selling",
                               style: TextStyle(
-                                  fontWeight: FontWeight.w700, fontSize: 15),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      width: 17,
-                    ),
-                    Image.asset('assets/images/first.png')
-                  ]),
+                                  color: Color(0xFFDF77CF), fontSize: 13),
+                            )),
+                          ),
+                          SizedBox(
+                            height: 9,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(left: 20),
+                            child: Text(
+                              "Graphic Design :\n Core Principles for\n Visual Design",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 23,
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(left: 24),
+                                child: Image.asset('assets/images/second.png'),
+                              ),
+                              SizedBox(
+                                width: 7,
+                              ),
+                              Text(
+                                "4.9",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w700, fontSize: 15),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        width: 17,
+                      ),
+                      Image.asset('assets/images/first.png')
+                    ]),
+                  ),
                 ),
                 SizedBox(
                   height: 24,
