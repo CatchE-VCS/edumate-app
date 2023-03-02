@@ -17,11 +17,8 @@ class BottomNavTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width:
-          // selected!
-          // ? 90
-          // :
-          50,
+      width: selected! ? 78 : 63,
+      padding: EdgeInsets.symmetric(vertical: 2),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(50)),
       ),
@@ -38,10 +35,22 @@ class BottomNavTab extends StatelessWidget {
         onPressed: (() {
           callback(val);
         }),
-        child: Icon(
-          icon,
-          size: selected! ? 24 : 18,
-          color: selected! ? Colors.white : const Color(0xFFB7B7B7),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Icon(
+              icon,
+              size: selected! ? 24 : 18,
+              color: selected! ? Colors.white : const Color(0xFFB7B7B7),
+            ),
+            Text(
+              text,
+              style: TextStyle(
+                fontSize: selected! ? 10 : 7.5,
+                color: selected! ? Colors.white : const Color(0xFFB7B7B7),
+              ),
+            ),
+          ],
         ),
       ),
     );

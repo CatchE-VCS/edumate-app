@@ -13,13 +13,14 @@ class _BottomNavState extends State<BottomNav> {
   final bool bottomText1 = true,
       bottomText2 = false,
       bottomText3 = false,
-      bottomText4 = false;
+      bottomText4 = false,
+      bottomText5 = false;
 
-  Map<int, bool> selected = {0: true, 1: false, 2: false, 3: false};
+  Map<int, bool> selected = {0: true, 1: false, 2: false, 3: false, 4: false};
 
   changeBottomtab(int x) {
     setState(() {
-      for (int i = 0; i < 4; i++) {
+      for (int i = 0; i < 5; i++) {
         if (x == i) {
           selected[i] = true;
         } else {
@@ -30,6 +31,7 @@ class _BottomNavState extends State<BottomNav> {
     if (x == 0) Navigator.of(widget.context).pushNamed('/');
     if (x == 1) Navigator.of(widget.context).pushNamed('/skill');
     if (x == 2) Navigator.of(widget.context).pushNamed('/reels');
+    if (x == 3) Navigator.of(widget.context).pushNamed('/roadmap');
     if (x == 4) Navigator.of(widget.context).pushNamed('/coins');
   }
 
@@ -37,14 +39,14 @@ class _BottomNavState extends State<BottomNav> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.of(widget.context).size.width * 0.09,
+          horizontal: MediaQuery.of(widget.context).size.width * 0.07,
           vertical: 10),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Container(
           height: 56,
           padding: const EdgeInsets.symmetric(
-            horizontal: 8.0,
+            horizontal: 6.0,
           ),
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -72,7 +74,7 @@ class _BottomNavState extends State<BottomNav> {
           ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               BottomNavTab(
                   val: 0,
@@ -82,29 +84,29 @@ class _BottomNavState extends State<BottomNav> {
                   callback: changeBottomtab),
               BottomNavTab(
                   val: 1,
-                  icon: Icons.credit_card_outlined,
-                  text: "Credit",
+                  icon: Icons.tips_and_updates,
+                  text: "Skills",
                   selected: selected[1],
                   callback: changeBottomtab),
               BottomNavTab(
                 val: 2,
-                icon: Icons.pie_chart_outline,
+                icon: Icons.movie,
                 text: "Reels",
                 selected: selected[2],
                 callback: changeBottomtab,
               ),
               BottomNavTab(
                 val: 3,
-                icon: Icons.pie_chart_outline,
-                text: "Reels",
-                selected: selected[2],
+                icon: Icons.location_on_outlined,
+                text: "Roadmap",
+                selected: selected[3],
                 callback: changeBottomtab,
               ),
               BottomNavTab(
                 val: 4,
-                icon: Icons.pie_chart_outline,
+                icon: Icons.savings_outlined,
                 text: "Coins",
-                selected: selected[2],
+                selected: selected[4],
                 callback: changeBottomtab,
               ),
               // Container(
