@@ -17,7 +17,7 @@ class BottomNavTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: selected! ? 75 : 60,
+      width: selected! ? 69 : 58,
       padding: EdgeInsets.symmetric(vertical: 2),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(50)),
