@@ -17,45 +17,31 @@ class BottomNavTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: selected! ? 108 : 68,
+      width:
+          // selected!
+          // ? 90
+          // :
+          50,
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(Radius.circular(50)),
+      ),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            elevation: 0,
-            backgroundColor: selected! ? Color(0xffE8EAF6) : Colors.white,
-            shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(50)))),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          shape: selected!
+              ? const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                )
+              : const RoundedRectangleBorder(),
+        ),
         onPressed: (() {
           callback(val);
         }),
-        child: RichText(
-          textAlign: TextAlign.justify,
-          text: TextSpan(
-            children: [
-              WidgetSpan(
-                alignment: PlaceholderAlignment.middle,
-                child: Icon(
-                  icon,
-                  size: selected! ? 18 : 24,
-                  color: selected!
-                      ? const Color(0xff303F9F)
-                      : const Color(0xFFB7B7B7),
-                ),
-              ),
-              selected!
-                  ? TextSpan(
-                      text: "  ${text}",
-                      style: const TextStyle(
-                        color: Color(0xff303F9F),
-                        fontFamily: 'Poppins',
-                        fontSize: 10,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    )
-                  : const TextSpan(
-                      text: "",
-                    ),
-            ],
-          ),
+        child: Icon(
+          icon,
+          size: selected! ? 24 : 18,
+          color: selected! ? Colors.white : const Color(0xFFB7B7B7),
         ),
       ),
     );
