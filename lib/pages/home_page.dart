@@ -511,7 +511,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNav(width: MediaQuery.of(context).size.width*0.9),
+      bottomNavigationBar: BottomNav(context: context),
       // BottomNavigationBar(
       //   showSelectedLabels: false,
       //   showUnselectedLabels: false,

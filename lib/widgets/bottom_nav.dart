@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class BottomNav extends StatefulWidget {
-  const BottomNav({super.key, required this.width});
-  final double width;
+  const BottomNav({super.key, required this.context});
+  // final double width;
+  final BuildContext context;
   @override
   State<BottomNav> createState() => _BottomNavState();
 }
@@ -19,7 +20,6 @@ class _BottomNavState extends State<BottomNav> {
 
   changeBottomtab(int x) {
     setState(() {
-      
       for (int i = 0; i < 4; i++) {
         if (x == i) {
           selected[i] = true;
@@ -28,12 +28,15 @@ class _BottomNavState extends State<BottomNav> {
         }
       }
     });
+    if (x == 0) Navigator.of(widget.context).pushNamed('/');
+    if (x == 1) Navigator.of(widget.context).pushNamed('/skill');
+    if (x == 2) Navigator.of(widget.context).pushNamed('/reels');
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(widget.width * 0.1),
+      padding: EdgeInsets.all(MediaQuery.of(widget.context).size.width * 0.09),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Container(
