@@ -1,11 +1,12 @@
+import 'package:edumate/pages/newhome.dart';
 import 'package:edumate/pages/profile_page.dart';
 import 'package:edumate/pages/reel/home_page.dart';
 import 'package:edumate/pages/skill_page.dart';
-import 'package:flutter/material.dart';
 import 'package:edumate/src/settings/settings_controller.dart';
 import 'package:edumate/src/settings/settings_service.dart';
+import 'package:flutter/material.dart';
 import 'package:overlay_support/overlay_support.dart';
-import 'pages/home_page.dart';
+
 import 'themes/themes.dart';
 
 void main() async {
@@ -27,12 +28,12 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         darkTheme: AppTheme.darkTheme,
         theme: AppTheme.lightTheme,
-        home: const HomePage(),
+        home: const NewHomePage(),
         debugShowCheckedModeBanner: false,
         routes: {
           '/skill': (context) => const SkillScreen(),
           '/profile': (context) => const ProfilePage(),
-          '/reels':(context) => const HomeScreen(),
+          '/reels': (context) => const HomeScreen(),
         },
       ),
     );

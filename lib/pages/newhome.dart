@@ -1,3 +1,4 @@
+import 'package:edumate/widgets/bottom_nav.dart';
 import 'package:flutter/material.dart';
 
 class NewHomePage extends StatelessWidget {
@@ -19,6 +20,7 @@ class NewHomePage extends StatelessWidget {
           ])),
       child: SafeArea(
         child: Scaffold(
+          bottomNavigationBar: BottomNav(context: context),
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             leading: IconButton(
@@ -112,19 +114,35 @@ class NewHomePage extends StatelessWidget {
               Container(
                 width: 125,
                 height: 29,
-                margin: EdgeInsets.only(right: 170),
+                margin: EdgeInsets.only(right: 175),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(70)),
                     color: Color(0xFF5D5392)),
                 child: Center(
                     child: Text(
                   "Development",
-                  style: TextStyle(),
+                  style: TextStyle(fontSize: 15),
                 )),
               ),
               SizedBox(
                 height: 28,
               ),
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Container(
+                  margin: EdgeInsets.only(left: 29),
+                  child: Text(
+                    "Best online Courses about 'Design' ",
+                    style: TextStyle(fontSize: 13),
+                  ),
+                ),
+                SizedBox(
+                  width: 50,
+                ),
+                Text(
+                  "50 Results",
+                  style: TextStyle(fontSize: 13),
+                ),
+              ])
             ],
           ),
         ),
