@@ -17,7 +17,7 @@ class BottomNavTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: selected! ? 78 : 63,
+      width: selected! ? 75 : 60,
       padding: EdgeInsets.symmetric(vertical: 2),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(50)),
@@ -46,7 +46,7 @@ class BottomNavTab extends StatelessWidget {
             Text(
               text,
               style: TextStyle(
-                fontSize: selected! ? 10 : 7.5,
+                fontSize: selected! ? 8 : 6,
                 color: selected! ? Colors.white : const Color(0xFFB7B7B7),
               ),
             ),
