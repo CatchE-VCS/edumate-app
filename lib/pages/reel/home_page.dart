@@ -3,27 +3,24 @@ import 'package:edumate/pages/reel/content_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  
   const HomeScreen({super.key});
-  
- 
 
   @override
   Widget build(BuildContext context) {
-     final List<String> videos = [
-      'https://akg-hackathons.github.io/edumate_assets/Why%20should%20we%20hire%20you_%20Interview%20Question%20%236.mp4',
-      'https://akg-hackathons.github.io/edumate_videos/videoplayback.mp4',
-      'https://akg-hackathons.github.io/edumate_videos/5 Tricks of Google Search.mp4',
-      'https://akg-hackathons.github.io/edumate_videos/videoplayback (1).mp4',
+    final List<String> videos = [
       'https://akg-hackathons.github.io/edumate_videos/videoplayback (2).mp4',
-      'https://akg-hackathons.github.io/edumate_videos/videoplayback (3).mp4',
-      'https://akg-hackathons.github.io/edumate_videos/videoplayback (4).mp4',
-      'https://akg-hackathons.github.io/edumate_videos/videoplayback (5).mp4',
       'https://akg-hackathons.github.io/edumate_videos/videoplayback (6).mp4',
+      'https://akg-hackathons.github.io/edumate_assets/Why%20should%20we%20hire%20you_%20Interview%20Question%20%236.mp4',
+      'https://akg-hackathons.github.io/edumate_videos/videoplayback (1).mp4',
+      'https://akg-hackathons.github.io/edumate_videos/videoplayback.mp4'
+          'https://akg-hackathons.github.io/edumate_videos/videoplayback (3).mp4',
+      'https://akg-hackathons.github.io/edumate_videos/videoplayback (4).mp4',
+      'https://akg-hackathons.github.io/edumate_videos/videoplayback.mp4',
+      'https://akg-hackathons.github.io/edumate_videos/videoplayback (5).mp4',
       'https://akg-hackathons.github.io/edumate_videos/videoplayback (7).mp4',
       'https://akg-hackathons.github.io/edumate_videos/videoplayback (8).mp4',
+      'https://akg-hackathons.github.io/edumate_videos/5 Tricks of Google Search.mp4',
       'https://akg-hackathons.github.io/edumate_videos/videoplayback (9).mp4',
-      'https://akg-hackathons.github.io/edumate_videos/videoplayback.mp4'
     ];
     return Scaffold(
       backgroundColor: Color(0xff1f0e34),

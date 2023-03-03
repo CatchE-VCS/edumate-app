@@ -360,8 +360,6 @@ class Container2 extends StatelessWidget {
             width: 17,
           ),
           Image.asset('assets/images/third.png')
-        ]),
-      ),
-    );
+        ])
   }
 }
