@@ -1,5 +1,6 @@
 import 'package:edumate/pages/yourclasses/yourclasses.dart';
 import 'package:edumate/widgets/bottom_nav.dart';
+import 'package:edumate/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -22,15 +23,23 @@ class NewHomePage extends StatelessWidget {
           ])),
       child: SafeArea(
         child: Scaffold(
+          drawer: Drawer(
+            child: DrawerScreen(),
+          ),
           extendBody: true,
           bottomNavigationBar: BottomNav(context: context),
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            leading: IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: Icon(Icons.arrow_back_ios)),
+            leading: Builder(
+              builder: (context) {
+                return IconButton(
+                    tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+                    onPressed: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                    icon: Image.asset("assets/icons/drawer_button.png"));
+              }
+            ),
             backgroundColor: Colors.transparent,
             centerTitle: true,
             title: Text('Courses'),

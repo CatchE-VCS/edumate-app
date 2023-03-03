@@ -1,3 +1,4 @@
+import 'package:edumate/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class DrawerScreen extends StatelessWidget {
@@ -10,13 +11,18 @@ class DrawerScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Color(0xff705cdc),
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: IconButton(
-            iconSize: 40,
-            icon: Icon(Icons.cancel),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
+        leading: Builder(
+
+          builder: (context) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: IconButton(
+                iconSize: 40,
+                icon: Icon(Icons.cancel),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+            );
+          }
         ),
       ),
 
@@ -26,22 +32,25 @@ class DrawerScreen extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: 8,),
-              Row(
-                children: [
-                  CircleAvatar(
-                    child: ColoredBox(color: Colors.white,),
-                  ),
-                  SizedBox(width: 15,),
-                  Column(
+              InkWell(
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage())),
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      child: ColoredBox(color: Colors.white,),
+                    ),
+                    SizedBox(width: 15,),
+                    Column(
 
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Jonathan Larson", style: TextStyle(fontSize: 18, color: Colors.white),),
-                      SizedBox(height: 5,),
-                      Text("UI/UX Designer", style: TextStyle(fontSize: 12, color: Color(0xffDEDEDE)),)
-                    ],
-                  )
-                ],
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Jonathan Larson", style: TextStyle(fontSize: 18, color: Colors.white),),
+                        SizedBox(height: 5,),
+                        Text("UI/UX Designer", style: TextStyle(fontSize: 12, color: Color(0xffDEDEDE)),)
+                      ],
+                    )
+                  ],
+                ),
               ),
               SizedBox(height: 60,),
               Column(
