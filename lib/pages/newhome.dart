@@ -170,7 +170,7 @@ class NewHomePage extends StatelessWidget {
                 ),
                 Container2(
                   img: 'assets/images/third.png',
-                  text: 'Create a Bold,\nColorful Album,\nCover',
+                  text: 'Create a Bold,\nColorful Album,\ngitCover',
                   urle:
                       'https://www.udemy.com/course/adobe-photoshop-album-cover-design/',
                 ),
@@ -360,6 +360,8 @@ class Container2 extends StatelessWidget {
             width: 17,
           ),
           Image.asset('assets/images/third.png')
-        ])
+        ]),
+      ),
+    );
   }
 }
