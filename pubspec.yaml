@@ -61,7 +61,8 @@ dependencies:
   overlay_support: ^2.1.0
   firebase_messaging: ^14.2.5
   flutter_svg: ^2.0.2
-
+  percent_indicator: ^4.2.2
+  youtube_player_flutter: ^8.1.2
 
 
 dev_dependencies:

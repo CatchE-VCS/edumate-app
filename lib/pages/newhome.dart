@@ -1,3 +1,4 @@
+import 'package:edumate/pages/yourclasses/yourclasses.dart';
 import 'package:edumate/widgets/bottom_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -58,9 +59,17 @@ class NewHomePage extends StatelessWidget {
                                 BorderRadius.all(Radius.circular(25))),
                         child: Center(child: Text("All Courses")),
                       ),
-                      Container(
-                          margin: EdgeInsets.only(right: 42),
-                          child: Text('Your Classes'))
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage()));
+                        },
+                        child: Container(
+                            margin: EdgeInsets.only(right: 42),
+                            child: Text('Your Classes')),
+                      )
                     ],
                   ),
                 ),
@@ -97,7 +106,7 @@ class NewHomePage extends StatelessWidget {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(70)),
                           color: Color(0xFF5D5392)),
-                      child: Center(child: Text("Design")),
+                      child: Center(child: Text("All Courses")),
                     ),
                     SizedBox(
                       width: 10,
