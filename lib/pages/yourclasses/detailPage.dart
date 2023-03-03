@@ -9,17 +9,31 @@ class DetailPage extends StatelessWidget {
   DetailPage(this.course);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SingleChildScrollView(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          CustomAppBar(course),
-          CourseDescription(course),
-          CourseProgress(),
-        ],
-      ),
-    ));
+    return Container(
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+            Color(0xFF1F0E14),
+            Color(0xBF37194C),
+            Color(0xB34E2178),
+            Color(0xD934134F),
+            Color(0xFF1F0E24),
+          ])),
+      child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CustomAppBar(course),
+                CourseDescription(course),
+                CourseProgress(),
+              ],
+            ),
+          )),
+    );
   }
 }
 
@@ -61,16 +75,30 @@ class DetailPage2 extends StatelessWidget {
   DetailPage2(this.course2);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SingleChildScrollView(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          CustomAppBar2(course2),
-          CourseDescription2(course2),
-          CourseProgress2(),
-        ],
-      ),
-    ));
+    return Container(
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+            Color(0xFF1F0E14),
+            Color(0xBF37194C),
+            Color(0xB34E2178),
+            Color(0xD934134F),
+            Color(0xFF1F0E24),
+          ])),
+      child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CustomAppBar2(course2),
+                CourseDescription2(course2),
+                CourseProgress2(),
+              ],
+            ),
+          )),
+    );
   }
 }

@@ -2,6 +2,7 @@ import 'package:edumate/pages/yourclasses/emoji.dart';
 import 'package:edumate/pages/yourclasses/featureCourse.dart';
 import 'package:edumate/pages/yourclasses/searchInput.dart';
 import 'package:edumate/themes/color.dart';
+import 'package:edumate/widgets/bottom_nav.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,6 +17,7 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _widgetOptions = <Widget>[
     ListView(
       children: [
+        const Con(),
         const EmojiText(),
         const SearchInput(),
         FeatureCourse1(),
@@ -52,38 +54,8 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.transparent,
         appBar: _buildAppBar(),
         body: _widgetOptions.elementAt(_selectedIndex),
-        bottomNavigationBar: _builtBottomNavigationBar(),
+        bottomNavigationBar: BottomNav(context: context),
       ),
-    );
-  }
-
-  BottomNavigationBar _builtBottomNavigationBar() {
-    return BottomNavigationBar(
-      type: BottomNavigationBarType.fixed,
-      backgroundColor: kBackground,
-      showSelectedLabels: false,
-      showUnselectedLabels: false,
-      items: [
-        BottomNavigationBarItem(
-            icon: Container(
-              padding: const EdgeInsets.only(bottom: 4),
-              decoration: const BoxDecoration(
-                  border: Border(bottom: BorderSide(color: kAccent, width: 2))),
-              child: const Text(
-                'Home',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-            label: 'home'),
-        const BottomNavigationBarItem(
-            label: 'calendar', icon: Icon(Icons.chat_bubble_outline)),
-        const BottomNavigationBarItem(
-            label: 'bookmark', icon: Icon(Icons.bookmark_border_outlined)),
-        const BottomNavigationBarItem(
-            label: 'user', icon: Icon(Icons.supervised_user_circle_rounded)),
-      ],
-      currentIndex: _selectedIndex,
-      onTap: _onItenTap,
     );
   }
 
@@ -126,6 +98,46 @@ class _HomePageState extends State<HomePage> {
           ],
         )
       ],
+    );
+  }
+}
+
+class Con extends StatelessWidget {
+  const Con({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 334,
+      height: 49,
+      margin: EdgeInsets.only(left: 13),
+      decoration: BoxDecoration(
+          color: Color(0xFF5D5392),
+          borderRadius: BorderRadius.all(Radius.circular(25))),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            width: 161,
+            height: 41,
+            margin: EdgeInsets.only(left: 7),
+            decoration: BoxDecoration(
+                color: Color(0xFF897BD2),
+                borderRadius: BorderRadius.all(Radius.circular(25))),
+            child: Center(child: Text("All Courses")),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => HomePage()));
+            },
+            child: Container(
+                margin: EdgeInsets.only(right: 42),
+                child: Text('Your Classes')),
+          )
+        ],
+      ),
     );
   }
 }

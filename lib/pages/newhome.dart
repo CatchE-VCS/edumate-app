@@ -159,174 +159,208 @@ class NewHomePage extends StatelessWidget {
                 SizedBox(
                   height: 14,
                 ),
-                GestureDetector(
-                  onTap: () async {
-                    const url =
-                        'https://www.udemy.com/course/photoshop-masking/';
-                    final uri = Uri.parse(url);
-                    if (await canLaunchUrl(uri)) {
-                      await launchUrl(uri);
-                    } else {
-                      throw 'Could not launch $url';
-                    }
-                  },
-                  child: Container(
-                    width: 334,
-                    height: 163,
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                              Color(0xFFDF77CF),
-                              Color(0xE6B24DA2),
-                              Color(0xCC9A478D),
-                            ]),
-                        borderRadius: BorderRadius.all(Radius.circular(25))),
-                    child: Row(children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: 16,
-                            height: 14,
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(left: 16),
-                            decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(70)),
-                                color: Colors.white),
-                            width: 86,
-                            height: 25,
-                            child: Center(
-                                child: Text(
-                              "Best Selling",
-                              style: TextStyle(
-                                  color: Color(0xFFDF77CF), fontSize: 13),
-                            )),
-                          ),
-                          SizedBox(
-                            height: 9,
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(left: 20),
-                            child: Text(
-                              "Graphic Design :\n Core Principles for\n Visual Design",
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w700),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 23,
-                          ),
-                          Row(
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(left: 24),
-                                child: Image.asset('assets/images/second.png'),
-                              ),
-                              SizedBox(
-                                width: 7,
-                              ),
-                              Text(
-                                "4.9",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w700, fontSize: 15),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        width: 17,
-                      ),
-                      Image.asset('assets/images/first.png')
-                    ]),
-                  ),
+                Container1(
+                  urle: 'https://www.udemy.com/course/photoshop-masking/',
+                  text:
+                      "Graphic Design :\n Core Principles for\n Visual Design",
+                  img: 'assets/images/first.png',
                 ),
                 SizedBox(
                   height: 24,
                 ),
-                Container(
-                  width: 334,
-                  height: 163,
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Color(0xFFA798F8),
-                            Color(0xA6B0A4ED),
-                            Color(0xA69182DC),
-                            Color(0x669182DC)
-                          ]),
-                      borderRadius: BorderRadius.all(Radius.circular(25))),
-                  child: Row(children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          width: 16,
-                          height: 14,
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 16),
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(70)),
-                              color: Colors.white),
-                          width: 86,
-                          height: 25,
-                          child: Center(
-                              child: Text(
-                            "Best Selling",
-                            style: TextStyle(
-                                color: Color(0xFF897BD2), fontSize: 13),
-                          )),
-                        ),
-                        SizedBox(
-                          height: 9,
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 20),
-                          child: Text(
-                            "Graphic Design :\n Core Principles for\n Visual Design",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w700),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 23,
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(left: 24),
-                              child: Image.asset('assets/images/second.png'),
-                            ),
-                            SizedBox(
-                              width: 7,
-                            ),
-                            Text(
-                              "4.8",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w700, fontSize: 15),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      width: 17,
-                    ),
-                    Image.asset('assets/images/third.png')
-                  ]),
+                Container2(
+                  img: 'assets/images/third.png',
+                  text: 'Create a Bold,\nColorful Album,\nCover',
+                  urle:
+                      'https://www.udemy.com/course/adobe-photoshop-album-cover-design/',
                 ),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class Container1 extends StatelessWidget {
+  String text;
+  String img;
+  String urle;
+  Container1({required this.text, required this.img, required this.urle});
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () async {
+        String url = urle;
+        final uri = Uri.parse(url);
+        if (await canLaunchUrl(uri)) {
+          await launchUrl(uri);
+        } else {
+          throw 'Could not launch $url';
+        }
+      },
+      child: Container(
+        width: 334,
+        height: 163,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFFDF77CF),
+                  Color(0xE6B24DA2),
+                  Color(0xCC9A478D),
+                ]),
+            borderRadius: BorderRadius.all(Radius.circular(25))),
+        child: Row(children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: 16,
+                height: 14,
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 16),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(70)),
+                    color: Colors.white),
+                width: 86,
+                height: 25,
+                child: Center(
+                    child: Text(
+                  "Best Selling",
+                  style: TextStyle(color: Color(0xFFDF77CF), fontSize: 13),
+                )),
+              ),
+              SizedBox(
+                height: 9,
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 20),
+                child: Text(
+                  text,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                ),
+              ),
+              SizedBox(
+                height: 23,
+              ),
+              Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(left: 24),
+                    child: Image.asset('assets/images/second.png'),
+                  ),
+                  SizedBox(
+                    width: 7,
+                  ),
+                  Text(
+                    "4.9",
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+                  )
+                ],
+              )
+            ],
+          ),
+          SizedBox(
+            width: 17,
+          ),
+          Image.asset(img)
+        ]),
+      ),
+    );
+  }
+}
+
+class Container2 extends StatelessWidget {
+  String text;
+  String img;
+  String urle;
+  Container2({required this.text, required this.img, required this.urle});
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () async {
+        String url = urle;
+        final uri = Uri.parse(url);
+        if (await canLaunchUrl(uri)) {
+          await launchUrl(uri);
+        } else {
+          throw 'Could not launch $url';
+        }
+      },
+      child: Container(
+        width: 334,
+        height: 163,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFFA798F8),
+                  Color(0xA6B0A4ED),
+                  Color(0xA69182DC),
+                  Color(0x669182DC)
+                ]),
+            borderRadius: BorderRadius.all(Radius.circular(25))),
+        child: Row(children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: 16,
+                height: 14,
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 16),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(70)),
+                    color: Colors.white),
+                width: 86,
+                height: 25,
+                child: Center(
+                    child: Text(
+                  "Best Selling",
+                  style: TextStyle(color: Color(0xFF897BD2), fontSize: 13),
+                )),
+              ),
+              SizedBox(
+                height: 9,
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 20),
+                child: Text(
+                  text,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                ),
+              ),
+              SizedBox(
+                height: 23,
+              ),
+              Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(left: 24),
+                    child: Image.asset('assets/images/second.png'),
+                  ),
+                  SizedBox(
+                    width: 7,
+                  ),
+                  Text(
+                    "4.8",
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+                  )
+                ],
+              )
+            ],
+          ),
+          SizedBox(
+            width: 17,
+          ),
+          Image.asset('assets/images/third.png')
+        ]),
       ),
     );
   }
