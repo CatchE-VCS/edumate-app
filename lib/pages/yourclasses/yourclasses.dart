@@ -1,3 +1,4 @@
+import 'package:edumate/pages/newhome.dart';
 import 'package:edumate/pages/yourclasses/emoji.dart';
 import 'package:edumate/pages/yourclasses/featureCourse.dart';
 import 'package:edumate/pages/yourclasses/searchInput.dart';
@@ -108,9 +109,9 @@ class Con extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 334,
+      width: 329,
       height: 49,
-      margin: EdgeInsets.only(left: 13),
+      margin: EdgeInsets.only(left: 13, right: 10),
       decoration: BoxDecoration(
           color: Color(0xFF5D5392),
           borderRadius: BorderRadius.all(Radius.circular(25))),
@@ -118,24 +119,25 @@ class Con extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          GestureDetector(
+            onTap: () => Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => NewHomePage())),
+            child: Container(
+              width: 161,
+              height: 41,
+              margin: EdgeInsets.only(left: 7),
+              child: Center(child: Text("All Courses")),
+            ),
+          ),
           Container(
             width: 161,
             height: 41,
-            margin: EdgeInsets.only(left: 7),
+            margin: EdgeInsets.only(right: 7),
             decoration: BoxDecoration(
                 color: Color(0xFF897BD2),
                 borderRadius: BorderRadius.all(Radius.circular(25))),
             child: Center(child: Text("All Courses")),
           ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => HomePage()));
-            },
-            child: Container(
-                margin: EdgeInsets.only(right: 42),
-                child: Text('Your Classes')),
-          )
         ],
       ),
     );
