@@ -1,6 +1,6 @@
 import 'package:edumate/firebase_options.dart';
 import 'package:edumate/pages/coins.dart';
-import 'package:edumate/pages/newhome.dart';
+import 'package:edumate/pages/contest_page.dart';
 import 'package:edumate/pages/profile_page.dart';
 import 'package:edumate/pages/reel/home_page.dart';
 import 'package:edumate/pages/skill_page.dart';
@@ -46,9 +46,7 @@ class MyApp extends StatelessWidget {
           '/profile': (context) => const ProfilePage(),
           '/reels': (context) => const HomeScreen(),
           '/coins': (context) => const Coins(),
-          '/logins': (context) => const LoginScreen(),
-          'registrations': (context) => const Registration(),
-          '/homepage': (context) => const NewHomePage(),
+          '/contest': (context) => const ContestPage()
         },
       ),
     );

@@ -136,7 +136,7 @@ class Con extends StatelessWidget {
             decoration: BoxDecoration(
                 color: Color(0xFF897BD2),
                 borderRadius: BorderRadius.all(Radius.circular(25))),
-            child: Center(child: Text("All Courses")),
+            child: Center(child: Text("Your Classes")),
           ),
         ],
       ),
