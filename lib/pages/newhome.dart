@@ -3,6 +3,7 @@ import 'package:edumate/widgets/bottom_nav.dart';
 import 'package:edumate/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:edumate/pages/yourclasses/yourclasses.dart';
 
 class NewHomePage extends StatefulWidget {
   @override
@@ -63,206 +64,206 @@ class _NewHomePageState extends State<NewHomePage>
           ),
           body: SingleChildScrollView(
             child: Column(children: [
-              Padding(
-                padding: EdgeInsets.all(5),
-                child: TabBar(
-                  unselectedLabelColor: Colors.white,
-                  labelColor: Colors.white,
-                  indicatorColor: Colors.white,
-                  indicatorWeight: 2,
-                  indicator: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  controller: tabController,
-                  tabs: [
-                    Tab(
-                      text: 'Tab 1',
-                    ),
-                    Tab(
-                      text: 'Tab 1',
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: TabBarView(
-                  controller: tabController,
-                  children: [
-                    // Tab1(),
-                    NN(),
-                    NN()
-                    // Tab2(),
-                  ],
-                ),
-              ),
-              // Container(
-              //   width: 334,
-              //   height: 49,
-              //   margin: EdgeInsets.only(left: 13),
-              //   decoration: BoxDecoration(
-              //       color: Color(0xFF5D5392),
-              //       borderRadius: BorderRadius.all(Radius.circular(25))),
-              //   child: Row(
-              //     crossAxisAlignment: CrossAxisAlignment.center,
-              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //     children: [
-              //       Container(
-              //         width: 161,
-              //         height: 41,
-              //         margin: EdgeInsets.only(left: 7),
-              //         decoration: BoxDecoration(
-              //             color: Color(0xFF897BD2),
-              //             borderRadius: BorderRadius.all(Radius.circular(25))),
-              //         child: Center(child: Text("All Courses")),
+              // Padding(
+              //   padding: EdgeInsets.all(5),
+              //   child: TabBar(
+              //     unselectedLabelColor: Color(0xFF5D5392),
+              //     labelColor: Color(0xFF5D5392),
+              //     indicatorColor: Color(0xFF897BD2),
+              //     indicatorWeight: 2,
+              //     indicator: BoxDecoration(
+              //       color: Color(0xFF897BD2),
+              //       borderRadius: BorderRadius.circular(25),
+              //     ),
+              //     controller: tabController,
+              //     tabs: [
+              //       Tab(
+              //         text: 'All Courses',
               //       ),
-              //       GestureDetector(
-              //         onTap: () {
-              //           Navigator.push(
-              //               context,
-              //               MaterialPageRoute(
-              //                   builder: (context) => HomePage()));
-              //         },
-              //         child: Container(
-              //             margin: EdgeInsets.only(right: 42),
-              //             child: Text('Your Classes')),
-              //       )
+              //       Tab(
+              //         text: 'Your Courses',
+              //       ),
               //     ],
               //   ),
               // ),
-              // SizedBox(
-              //   height: 27,
-              // ),
-              // Container(
-              //   margin: EdgeInsets.only(right: 75),
-              //   child: Text(
-              //     "What do you want to\n learn today ?",
-              //     style: TextStyle(fontSize: 24),
+              // Expanded(
+              //   child: TabBarView(
+              //     controller: tabController,
+              //     children: [
+              //       // Tab1(),
+              //       NN(),
+              //       NN()
+              //       // Tab2(),
+              //     ],
               //   ),
               // ),
-              // SizedBox(
-              //   height: 16,
-              // ),
-              // Row(
-              //   children: [
-              //     Container(
-              //       margin: EdgeInsets.only(left: 28),
-              //       width: 82,
-              //       height: 29,
-              //       decoration: BoxDecoration(
-              //           borderRadius: BorderRadius.all(Radius.circular(70)),
-              //           color: Color(0xFF897BD2)),
-              //       child: Center(child: Text("Design")),
-              //     ),
-              //     SizedBox(
-              //       width: 10,
-              //     ),
-              //     Container(
-              //       width: 104,
-              //       height: 29,
-              //       decoration: BoxDecoration(
-              //           borderRadius: BorderRadius.all(Radius.circular(70)),
-              //           color: Color(0xFF5D5392)),
-              //       child: Center(child: Text("All Courses")),
-              //     ),
-              //     SizedBox(
-              //       width: 10,
-              //     ),
-              //     Container(
-              //       width: 64,
-              //       height: 29,
-              //       decoration: BoxDecoration(
-              //           borderRadius: BorderRadius.all(Radius.circular(70)),
-              //           color: Color(0xFF5D5392)),
-              //       child: Center(child: Text("UI/UX")),
-              //     )
-              //   ],
-              // ),
-              // SizedBox(
-              //   height: 10,
-              // ),
-              // Container(
-              //   width: 125,
-              //   height: 29,
-              //   margin: EdgeInsets.only(right: 175),
-              //   decoration: BoxDecoration(
-              //       borderRadius: BorderRadius.all(Radius.circular(70)),
-              //       color: Color(0xFF5D5392)),
-              //   child: Center(
-              //       child: Text(
-              //     "Development",
-              //     style: TextStyle(fontSize: 15),
-              //   )),
-              // ),
-              // SizedBox(
-              //   height: 28,
-              // ),
-              // Text(
-              //   "Designing Courses",
-              //   style: TextStyle(fontSize: 22, color: Colors.white),
-              // ),
-              // SizedBox(
-              //   height: 10,
-              // ),
-              // Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              //   Container(
-              //     margin: EdgeInsets.only(left: 29),
-              //     child: Text(
-              //       "Best online Courses about 'Design' ",
-              //       style: TextStyle(fontSize: 13),
-              //     ),
-              //   ),
-              //   SizedBox(
-              //     width: 50,
-              //   ),
-              //   Text(
-              //     "50 Results",
-              //     style: TextStyle(fontSize: 13),
-              //   ),
-              // ]),
-              // SizedBox(
-              //   height: 15,
-              // ),
-              // Container1(
-              //   urle: 'https://www.udemy.com/course/photoshop-masking/',
-              //   text: "Graphic Design :\n Core Principles for\n Visual Design",
-              //   img: 'assets/images/first.png',
-              // ),
-              // SizedBox(
-              //   height: 24,
-              // ),
-              // Container2(
-              //   img: 'assets/images/third.png',
-              //   text: 'Create a Bold,\nColorful Album,\ngitCover',
-              //   urle:
-              //       'https://www.udemy.com/course/adobe-photoshop-album-cover-design/',
-              // ),
-              // SizedBox(
-              //   height: 24,
-              // ),
-              // Container1(
-              //   urle:
-              //       'https://www.udemy.com/course/premiere-pro-lumetri-color-correct-like-a-pro/',
-              //   text: "Premier Pro Lumetri\nColor Correct\nlike a Pro",
-              //   img: 'assets/images/first.png',
-              // ),
-              // SizedBox(
-              //   height: 24,
-              // ),
-              // Container2(
-              //   img: 'assets/images/third.png',
-              //   text: 'Adobe Premiere Pro,\nMasterclass:Video',
-              //   urle:
-              //       'https://www.udemy.com/course/adobe-premiere-pro-video-editing/',
-              // ),
-              // SizedBox(
-              //   height: 24,
-              // ),
-              // Container1(
-              //   urle: 'https://www.udemy.com/course/incrediblevideocreator/',
-              //   text: "Filmmaker:\nVideo Creator",
-              //   img: 'assets/images/first.png',
-              // ),
+              Container(
+                width: 334,
+                height: 49,
+                margin: EdgeInsets.only(left: 13),
+                decoration: BoxDecoration(
+                    color: Color(0xFF5D5392),
+                    borderRadius: BorderRadius.all(Radius.circular(25))),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      width: 161,
+                      height: 41,
+                      margin: EdgeInsets.only(left: 7),
+                      decoration: BoxDecoration(
+                          color: Color(0xFF897BD2),
+                          borderRadius: BorderRadius.all(Radius.circular(25))),
+                      child: Center(child: Text("All Courses")),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
+                      },
+                      child: Container(
+                          margin: EdgeInsets.only(right: 42),
+                          child: Text('Your Classes')),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 27,
+              ),
+              Container(
+                margin: EdgeInsets.only(right: 75),
+                child: Text(
+                  "What do you want to\n learn today ?",
+                  style: TextStyle(fontSize: 24),
+                ),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(left: 28),
+                    width: 82,
+                    height: 29,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(70)),
+                        color: Color(0xFF897BD2)),
+                    child: Center(child: Text("Design")),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Container(
+                    width: 104,
+                    height: 29,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(70)),
+                        color: Color(0xFF5D5392)),
+                    child: Center(child: Text("All Courses")),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Container(
+                    width: 64,
+                    height: 29,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(70)),
+                        color: Color(0xFF5D5392)),
+                    child: Center(child: Text("UI/UX")),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                width: 125,
+                height: 29,
+                margin: EdgeInsets.only(right: 175),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(70)),
+                    color: Color(0xFF5D5392)),
+                child: Center(
+                    child: Text(
+                  "Development",
+                  style: TextStyle(fontSize: 15),
+                )),
+              ),
+              SizedBox(
+                height: 28,
+              ),
+              Text(
+                "Designing Courses",
+                style: TextStyle(fontSize: 22, color: Colors.white),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Container(
+                  margin: EdgeInsets.only(left: 29),
+                  child: Text(
+                    "Best online Courses about 'Design' ",
+                    style: TextStyle(fontSize: 13),
+                  ),
+                ),
+                SizedBox(
+                  width: 50,
+                ),
+                Text(
+                  "50 Results",
+                  style: TextStyle(fontSize: 13),
+                ),
+              ]),
+              SizedBox(
+                height: 15,
+              ),
+              Container1(
+                urle: 'https://www.udemy.com/course/photoshop-masking/',
+                text: "Graphic Design :\n Core Principles for\n Visual Design",
+                img: 'assets/images/first.png',
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              Container2(
+                img: 'assets/images/third.png',
+                text: 'Create a Bold,\nColorful Album,\ngitCover',
+                urle:
+                    'https://www.udemy.com/course/adobe-photoshop-album-cover-design/',
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              Container1(
+                urle:
+                    'https://www.udemy.com/course/premiere-pro-lumetri-color-correct-like-a-pro/',
+                text: "Premier Pro Lumetri\nColor Correct\nlike a Pro",
+                img: 'assets/images/first.png',
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              Container2(
+                img: 'assets/images/third.png',
+                text: 'Adobe Premiere Pro,\nMasterclass:Video',
+                urle:
+                    'https://www.udemy.com/course/adobe-premiere-pro-video-editing/',
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              Container1(
+                urle: 'https://www.udemy.com/course/incrediblevideocreator/',
+                text: "Filmmaker:\nVideo Creator",
+                img: 'assets/images/first.png',
+              ),
             ]),
           ),
         )));
