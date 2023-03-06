@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="facebook_app_id">1910128739325624</string>
+    <string name="fb_login_protocol_scheme">fb1910128739325624</string>
+    <string name="facebook_client_token">77817e15b7d8b15933bf5bc7ced87649</string>
+
+
+    <string name="app_name">Edumate</string>
+
+</resources>

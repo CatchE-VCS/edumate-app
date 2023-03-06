@@ -1,3 +1,4 @@
+import 'package:edumate/firebase_options.dart';
 import 'package:edumate/pages/coins.dart';
 import 'package:edumate/pages/contest_page.dart';
 import 'package:edumate/pages/profile_page.dart';
@@ -6,12 +7,20 @@ import 'package:edumate/pages/skill_page.dart';
 import 'package:edumate/pages/splashScreen.dart';
 import 'package:edumate/src/settings/settings_controller.dart';
 import 'package:edumate/src/settings/settings_service.dart';
+import 'package:edumate/state/auth/login.dart';
+import 'package:edumate/state/auth/registration.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:overlay_support/overlay_support.dart';
 
 import 'themes/themes.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform
+  );
   final settingsController = SettingsController(SettingsService());
   await settingsController.loadSettings();
   runApp(MyApp(

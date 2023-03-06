@@ -63,6 +63,7 @@ dependencies:
   flutter_svg: ^2.0.2
   percent_indicator: ^4.2.2
   youtube_player_flutter: ^8.1.2
+  fab_circular_menu: ^1.0.2
 
 
 dev_dependencies:
