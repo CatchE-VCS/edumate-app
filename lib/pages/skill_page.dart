@@ -10,7 +10,7 @@ class SkillScreen extends StatefulWidget {
 class _SkillScreenState extends State<SkillScreen> {
   String dropdownValue = 'Dog';
   bool _cont = false;
-  TextEditingController query = new TextEditingController();
+  TextEditingController query = TextEditingController();
 
 
   List<String> matchQuery = [];
@@ -49,10 +49,12 @@ class _SkillScreenState extends State<SkillScreen> {
     }
   }
 
+  @override
   void initState() {
     super.initState();
     _cont = false;
   }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -28,11 +28,11 @@ class _BottomNavState extends State<BottomNav> {
         }
       }
     });
-    if (x == 0) Navigator.of(widget.context).pushNamed('/');
-    if (x == 1) Navigator.of(widget.context).pushNamed('/skill');
-    if (x == 2) Navigator.of(widget.context).pushNamed('/reels');
-    if (x == 3) Navigator.of(widget.context).pushNamed('/roadmap');
-    if (x == 4) Navigator.of(widget.context).pushNamed('/coins');
+    if (x == 0) Navigator.of(widget.context).pushReplacementNamed('/');
+    if (x == 1) Navigator.of(widget.context).pushReplacementNamed('/skill');
+    if (x == 2) Navigator.of(widget.context).pushReplacementNamed('/reels');
+    if (x == 3) Navigator.of(widget.context).pushReplacementNamed('/roadmap');
+    if (x == 4) Navigator.of(widget.context).pushReplacementNamed('/coins');
   }
 
   @override
