@@ -1,10 +1,8 @@
+import 'package:edumate/googleauth.dart/googleauth.dart';
+import 'package:edumate/pages/newhome.dart';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:flutter/material.dart';
-import 'package:edumate/pages/newhome.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lottie/lottie.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:edumate/googleauth.dart/googleauth.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -17,7 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final AuthController _authController = AuthController();
   String isOpened = "No";
   int hey = 0;
-signInWithGoogle() async {
+  signInWithGoogle() async {
     // setState(() {
     //   _isLoading = true;
     // });
@@ -34,8 +32,13 @@ signInWithGoogle() async {
           'Congratulations you have been successfully signed in..', context);
 
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const NewHomePage()));
+          MaterialPageRoute(builder: (context) => NewHomePage()));
     }
+  }
+
+  go() {
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => NewHomePage()));
   }
 
   @override
@@ -90,15 +93,18 @@ signInWithGoogle() async {
                 width: 500,
               ),
               FloatingActionButton(
-                mini: false,
-                backgroundColor: Colors.white,
-                heroTag: "Google",
-                child: Container(
-                    child: CircleAvatar(
-                        child: Image.asset('assets/images/google.png'))),
-                onPressed: () => Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => NewHomePage())),
-              ),
+                  mini: false,
+                  backgroundColor: Colors.white,
+                  heroTag: "Facebook",
+                  child: Icon(
+                    Icons.facebook,
+                    color: Colors.blue,
+                  ),
+                  onPressed: () {
+                    go();
+                    // Navigator.pushReplacement(context,
+                    // MaterialPageRoute(builder: (context) => NewHomePage()));
+                  }),
               SizedBox(
                 height: 500,
                 width: 500,
@@ -106,14 +112,13 @@ signInWithGoogle() async {
               FloatingActionButton(
                 backgroundColor: Colors.white,
                 mini: false,
-                heroTag: "Facebook",
-                child: Icon(
-                  Icons.facebook,
-                  color: Colors.blue,
-                ),
+                heroTag: "Google",
+                child: Container(
+                    child: CircleAvatar(
+                        child: Image.asset('assets/images/google.png'))),
                 onPressed: () {
                   setState(() {
-                    hey = hey - 1;
+                    signInWithGoogle();
                   });
                 },
               ),
@@ -123,6 +128,4 @@ signInWithGoogle() async {
       ),
     );
   }
-
-  
 }
