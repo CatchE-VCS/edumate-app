@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:edumate/pages/newhome.dart';
 import 'package:edumate/state/auth/login.dart';
 import 'package:flutter/material.dart';
 
