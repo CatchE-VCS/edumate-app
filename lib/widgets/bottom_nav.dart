@@ -31,7 +31,7 @@ class _BottomNavState extends State<BottomNav> {
     if (x == 0) Navigator.of(widget.context).pushNamed('/');
     if (x == 1) Navigator.of(widget.context).pushNamed('/skill');
     if (x == 2) Navigator.of(widget.context).pushNamed('/reels');
-    if (x == 3) Navigator.of(widget.context).pushNamed('/roadmap');
+    if (x == 3) Navigator.of(widget.context).pushNamed('/contest');
     if (x == 4) Navigator.of(widget.context).pushNamed('/coins');
   }
 

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:edumate/pages/newhome.dart';
+import 'package:edumate/state/auth/login.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -20,9 +21,8 @@ class _SplashScreenState extends State<SplashScreen> {
   startSplashScreen() {
     var duration = const Duration(seconds: 2, milliseconds: 900);
     return Timer(duration, () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => NewHomePage()),
-      );
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => LoginScreen()));
     });
   }
 
