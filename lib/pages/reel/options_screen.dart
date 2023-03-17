@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 
 class OptionsScreen extends StatelessWidget {
+  final String src;
+  const OptionsScreen({Key? key, required this.src}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,7 +22,7 @@ class OptionsScreen extends StatelessWidget {
                     size: 32,
                   ),
                   Text(
-                    '601k',
+                    '0',
                     style: TextStyle(color: Colors.white, fontSize: 14),
                   ),
                   SizedBox(height: 20),
@@ -28,15 +31,20 @@ class OptionsScreen extends StatelessWidget {
                     size: 32,
                   ),
                   Text(
-                    '1123',
+                    '0',
                     style: TextStyle(color: Colors.white, fontSize: 14),
                   ),
                   SizedBox(height: 20),
                   Transform(
                     transform: Matrix4.rotationZ(5.8),
-                    child: Icon(
-                      Icons.send,
-                      size: 32,
+                    child: GestureDetector(
+                      onTap: () async {
+                        await Share.share(src);
+                      },
+                      child: Icon(
+                        Icons.send,
+                        size: 32,
+                      ),
                     ),
                   ),
                   SizedBox(height: 50),
