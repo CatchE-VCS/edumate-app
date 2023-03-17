@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
           '/reels': (context) => const HomeScreen(),
           '/coins': (context) => const Coins(),
           '/contest': (context) => const ContestPage(),
-          '/homee': (context) => NewHomePage(),
+          '/home': (context) => NewHomePage(),
         },
       ),
     );

@@ -28,7 +28,7 @@ class _BottomNavState extends State<BottomNav> {
         }
       }
     });
-    if (x == 0) Navigator.of(widget.context).pushNamed('/homee');
+    if (x == 0) Navigator.of(widget.context).pushNamed('/home');
     if (x == 1) Navigator.of(widget.context).pushNamed('/skill');
     if (x == 2) Navigator.of(widget.context).pushNamed('/reels');
     if (x == 3) Navigator.of(widget.context).pushNamed('/contest');
