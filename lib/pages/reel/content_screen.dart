@@ -1,6 +1,7 @@
 import 'package:chewie/chewie.dart';
 import 'package:edumate/pages/reel/like_screen.dart';
 import 'package:edumate/pages/reel/options_screen.dart';
+import 'package:edumate/widgets/bottom_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -44,35 +45,57 @@ class _ContentScreenState extends State<ContentScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      fit: StackFit.expand,
-      children: [
-        _chewieController != null &&
-                _chewieController!.videoPlayerController.value.isInitialized
-            ? GestureDetector(
-                onDoubleTap: () {
-                  setState(() {
-                    _liked = !_liked;
-                  });
-                },
-                child: Chewie(
-                  controller: _chewieController!,
-                ),
-              )
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircularProgressIndicator(),
-                  SizedBox(height: 10),
-                  Text('Loading...')
-                ],
+    return Container(
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+            Color(0xFF1F0E14),
+            Color(0xBF37194C),
+            Color(0xB34E2178),
+            Color(0xD934134F),
+            Color(0xFF1F0E24),
+          ])),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Stack(
+          fit: StackFit.expand,
+          children: [
+            _chewieController != null &&
+                    _chewieController!.videoPlayerController.value.isInitialized
+                ? GestureDetector(
+                    onDoubleTap: () {
+                      setState(() {
+                        _liked = !_liked;
+                      });
+                    },
+                    child: Chewie(
+                      controller: _chewieController!,
+                    ),
+                  )
+                : Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircularProgressIndicator(),
+                      SizedBox(height: 10),
+                      Text('Loading...')
+                    ],
+                  ),
+            if (_liked)
+              Center(
+                child: LikeIcon(),
               ),
-        if (_liked)
-          Center(
-            child: LikeIcon(),
-          ),
-        OptionsScreen()
-      ],
+            OptionsScreen(
+              src: widget.src,
+            )
+          ],
+        ),
+        bottomNavigationBar: BottomNav(
+          context: context,
+        ),
+        extendBody: true,
+      ),
     );
   }
 }
