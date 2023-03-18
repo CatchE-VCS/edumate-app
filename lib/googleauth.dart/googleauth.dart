@@ -70,6 +70,7 @@ class AuthController {
           //   'email': user.email,
           //   'userImage': user.photoURL,
           // });
+          return res = "new user";
         }
       }
       res = 'success';
