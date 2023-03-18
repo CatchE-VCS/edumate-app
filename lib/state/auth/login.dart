@@ -1,5 +1,6 @@
 import 'package:edumate/googleauth.dart/googleauth.dart';
 import 'package:edumate/pages/newhome.dart';
+import 'package:edumate/pages/registration_page.dart';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -30,9 +31,13 @@ class _LoginScreenState extends State<LoginScreen> {
       if (!mounted) return;
       showSnackBarr(
           'Congratulations you have been successfully signed in..', context);
-
-      Navigator.of(context).pushReplacement(
+      if(res == "new user") {
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => const RegistrationPage()));
+      } else {
+        Navigator.of(context).pushReplacement(  
           MaterialPageRoute(builder: (context) => NewHomePage()));
+      }
     }
   }
 
