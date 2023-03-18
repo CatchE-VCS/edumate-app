@@ -1,13 +1,9 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:edumate/pages/newhome.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:http/http.dart' as http;
-
-import '../widgets/bottom_nav.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({super.key});
@@ -44,6 +40,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
         "college": collegeController.text,
       }),
     );
+    if (val.statusCode == 200)
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => NewHomePage()));
   }
 
   Widget _circularContainer(double height, Color color,
@@ -95,8 +94,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 ])),
             child: SafeArea(
                 child: Scaffold(
-              extendBody: true,
-              bottomNavigationBar: BottomNav(context: context),
               backgroundColor: Colors.transparent,
               appBar: AppBar(
                 elevation: 0,

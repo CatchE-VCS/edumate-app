@@ -7,6 +7,21 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> linkss = [
+      'https://www.figma.com/login',
+      'https://www.canva.com/',
+      'https://www.programiz.com/cpp-programming/online-compiler/',
+      'https://www.figma.com/login',
+      'https://www.figma.com/login',
+      'https://www.figma.com/login',
+      'https://www.programiz.com/cpp-programming/online-compiler/',
+      'https://www.figma.com/login',
+      'https://www.figma.com/login',
+      'https://www.programiz.com/cpp-programming/online-compiler/',
+      'https://www.programiz.com/cpp-programming/online-compiler/',
+      'https://www.figma.com/login',
+      'https://www.figma.com/login',
+    ];
     final List<String> videos = [
       'https://akg-hackathons.github.io/edumate_videos/videoplayback (2).mp4',
       'https://akg-hackathons.github.io/edumate_videos/videoplayback (6).mp4',
@@ -44,6 +59,7 @@ class HomeScreen extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   return ContentScreen(
                     src: videos[index],
+                    ss: linkss[index],
                   );
                 },
                 itemCount: videos.length,

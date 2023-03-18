@@ -7,8 +7,10 @@ import 'package:video_player/video_player.dart';
 
 class ContentScreen extends StatefulWidget {
   final String src;
+  final String ss;
 
-  const ContentScreen({Key? key, required this.src}) : super(key: key);
+  const ContentScreen({Key? key, required this.src, required this.ss})
+      : super(key: key);
 
   @override
   _ContentScreenState createState() => _ContentScreenState();
@@ -87,7 +89,7 @@ class _ContentScreenState extends State<ContentScreen> {
                 child: LikeIcon(),
               ),
             OptionsScreen(
-              src: widget.src,
+              src: widget.ss,
             )
           ],
         ),

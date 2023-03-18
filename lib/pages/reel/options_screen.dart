@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class OptionsScreen extends StatelessWidget {
   final String src;
@@ -17,22 +18,20 @@ class OptionsScreen extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  Icon(
-                    Icons.favorite_outline,
-                    size: 32,
-                  ),
-                  Text(
-                    '0',
-                    style: TextStyle(color: Colors.white, fontSize: 14),
-                  ),
                   SizedBox(height: 20),
-                  Icon(
-                    Icons.comment_rounded,
-                    size: 32,
-                  ),
-                  Text(
-                    '0',
-                    style: TextStyle(color: Colors.white, fontSize: 14),
+                  GestureDetector(
+                    onTap: () async {
+                      final uri = Uri.parse(src);
+                      if (await canLaunchUrl(uri)) {
+                        await launchUrl(uri);
+                      } else {
+                        throw 'Could not launch $src';
+                      }
+                    },
+                    child: Icon(
+                      Icons.comment_rounded,
+                      size: 32,
+                    ),
                   ),
                   SizedBox(height: 20),
                   Transform(
