@@ -26,18 +26,21 @@ class _LoginScreenState extends State<LoginScreen> {
       //   _isLoading = false;
       // });
       if (!mounted) return;
-      return showSnackBarr(res, context);
+      if(res == "new user") {
+        showSnackBarr(res, context);
+        return Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => const RegistrationPage()));
+      
+
     } else {
       if (!mounted) return;
       showSnackBarr(
           'Congratulations you have been successfully signed in..', context);
-      if(res == "new user") {
-        Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => const RegistrationPage()));
-      } else {
+      
+      
         Navigator.of(context).pushReplacement(  
           MaterialPageRoute(builder: (context) => NewHomePage()));
-      }
+      
     }
   }
 
