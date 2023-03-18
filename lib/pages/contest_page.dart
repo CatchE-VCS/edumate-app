@@ -17,6 +17,7 @@ class ContestPage extends StatefulWidget {
 late List<NewsModel> _userModel = [];
 
 class _ContestPageState extends State<ContestPage> {
+  late Future<List<NewsModel>> data;
   Future<List<NewsModel>> getData() async {
     http.Response response =
         await http.get(Uri.parse('https://kontests.net/api/v1/all'));
@@ -75,17 +76,18 @@ class _ContestPageState extends State<ContestPage> {
       ),
     );
   }
+
   // void _getData() async {
   //   _userModel = await getData();
   //   Future.delayed(const Duration(seconds: 1)).then((value) => setState(() {}));
   // }
   //
-  // @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  //   _getData();
-  // }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    data = getData();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -102,19 +104,20 @@ class _ContestPageState extends State<ContestPage> {
             Color(0xFF1F0E24),
           ])),
       child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          title: Text("Competitive Contest"),
+          centerTitle: true,
           backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            title: Text("Competitive Contest"),
-            centerTitle: true,
-            backgroundColor: Colors.transparent,
-          ),
-          bottomNavigationBar: BottomNav(
-            context: context,
-          ),
-          extendBody: true,
-          body: FutureBuilder(
-              future: getData(),
-              builder: (context, AsyncSnapshot<List<NewsModel>> snapshot) {
+        ),
+        bottomNavigationBar: BottomNav(
+          context: context,
+        ),
+        extendBody: true,
+        body: FutureBuilder(
+            future: data,
+            builder: (context, AsyncSnapshot<List<NewsModel>> snapshot) {
+              if (snapshot.hasData) {
                 return ListView.builder(
                     itemCount: snapshot.data!.length,
                     itemBuilder: (context, index) {
@@ -124,7 +127,16 @@ class _ContestPageState extends State<ContestPage> {
                           starttime: snapshot.data![index].duration.toString(),
                           endtime: snapshot.data![index].site.toString());
                     });
-              })),
+              } else if (snapshot.hasError) {
+                return Container(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('error fetching data : ${snapshot.error}'));
+              }
+
+              // By default, show a loading spinner.
+              return const CircularProgressIndicator();
+            }),
+      ),
     );
   }
 
