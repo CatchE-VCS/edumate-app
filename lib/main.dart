@@ -24,6 +24,7 @@ void main() async {
   ));
 }
 
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key, required this.settingsController});
   final SettingsController settingsController;
