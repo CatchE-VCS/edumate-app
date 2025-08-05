@@ -16,40 +16,38 @@ class ContestPage extends StatefulWidget {
   State<ContestPage> createState() => _ContestPageState();
 }
 
-late List<NewsModel> _userModel = [];
+// Removed unused _userModel variable
 
 class _ContestPageState extends State<ContestPage> {
-  late Future<List<NewsModel>> data_all;
-  late Future<List<CodeforcesModel>> data_codechef;
-  late Future<List<CodeforcesModel>> data_codeforces;
-  late Future<List<CodeforcesModel>> data_leetcode;
+  late Future<List<NewsModel>> allData;
+  late Future<List<CodeforcesModel>> codechefData;
+  late Future<List<CodeforcesModel>> codeforcesData;
+  late Future<List<CodeforcesModel>> leetcodeData;
 
-  Future<List<CodeforcesModel>> getDataCodeforces({required String tab}) async {
+  Future<List<CodeforcesModel>> getCodeforcesData({required String platform}) async {
     http.Response response =
-    await http.get(Uri.parse('https://kontests.net/api/v1/$tab'));
+    await http.get(Uri.parse('https://kontests.net/api/v1/$platform'));
     if (response.statusCode == 200) {
       String data = response.body;
       // print(response.body);
-      print(jsonDecode(data));
+      // Debug: print(jsonDecode(data));
       return codeforcesModelFromJson(data);
     } else {
-      print(response.statusCode);
-      print(response.body);
+      // Error: Status ${response.statusCode}, Body: ${response.body}
       return [];
     }
   }
 
-  Future<List<NewsModel>> getData({required String tab}) async {
+  Future<List<NewsModel>> getData({required String platform}) async {
     http.Response response =
-        await http.get(Uri.parse('https://kontests.net/api/v1/$tab'));
+        await http.get(Uri.parse('https://kontests.net/api/v1/$platform'));
     if (response.statusCode == 200) {
       String data = response.body;
       // print(response.body);
-      print(jsonDecode(data));
+      // Debug: print(jsonDecode(data));
       return newsModelFromJson(data);
     } else {
-      print(response.statusCode);
-      print(response.body);
+      // Error: Status ${response.statusCode}, Body: ${response.body}
       return [];
     }
   }
@@ -106,7 +104,7 @@ class _ContestPageState extends State<ContestPage> {
                   height: 500,
                   child: (label == "All") ?
                   FutureBuilder(
-                      future: data_all,
+                      future: allData,
                       builder: (context, AsyncSnapshot<List<NewsModel>> snapshot) {
                         if (snapshot.hasData) {
                           return ListView.builder(
@@ -132,7 +130,7 @@ class _ContestPageState extends State<ContestPage> {
                       }) :
                   (label == "Codeforces" ?
                   FutureBuilder(
-                      future: data_codeforces,
+                      future: codeforcesData,
                       builder: (context, AsyncSnapshot<List<CodeforcesModel>> snapshot) {
                         if (snapshot.hasData) {
                           return ListView.builder(
@@ -157,7 +155,7 @@ class _ContestPageState extends State<ContestPage> {
                         return const CircularProgressIndicator();
                       }) : (label == "Codechef" ?
                   FutureBuilder(
-                      future: data_codechef,
+                      future: codechefData,
                       builder: (context, AsyncSnapshot<List<CodeforcesModel>> snapshot) {
                         if (snapshot.hasData) {
                           return ListView.builder(
@@ -182,7 +180,7 @@ class _ContestPageState extends State<ContestPage> {
                         return const CircularProgressIndicator();
                       }) :
                   FutureBuilder(
-                      future: data_leetcode,
+                      future: leetcodeData,
                       builder: (context, AsyncSnapshot<List<CodeforcesModel>> snapshot) {
                         if (snapshot.hasData) {
                           return ListView.builder(
@@ -223,12 +221,11 @@ class _ContestPageState extends State<ContestPage> {
   //
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    data_all = getData(tab: "all");
-    data_codechef = getDataCodeforces(tab : "code_chef");
-    data_codeforces = getDataCodeforces(tab: "codeforces");
-    data_leetcode = getDataCodeforces(tab: "leet_code");
+    allData = getData(platform: "all");
+    codechefData = getCodeforcesData(platform: "code_chef");
+    codeforcesData = getCodeforcesData(platform: "codeforces");
+    leetcodeData = getCodeforcesData(platform: "leet_code");
   }
 
   @override

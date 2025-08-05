@@ -82,16 +82,16 @@ class WebDeveloperFeatureCourse extends StatelessWidget {
   }
 }
 
-class FeatureCourse2 extends StatelessWidget {
+class ProgrammerFeatureCourse extends StatelessWidget {
   static final coursesList2 = Course2.generateCourses2();
 
-  const FeatureCourse2({super.key});
+  const ProgrammerFeatureCourse({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CategoryTitle('Programmer', 'View All'),
+        const CategoryTitle('Programmer', 'View All'),
         SizedBox(
           height: 300,
           child: ListView.separated(

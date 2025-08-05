@@ -69,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
         floatingActionButton: Builder(
           builder: (context) => FabCircularMenu(
             alignment: Alignment.bottomRight,
-            ringColor: Colors.red.withOpacity(0.0),
+            ringColor: Colors.red.withValues(alpha: 0.0),
             ringDiameter: 250.0,
             ringWidth: 60.0,
             fabSize: 60.0,

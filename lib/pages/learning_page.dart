@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+/// Main learning page that displays educational content and learning cards
 class LearningPage extends StatelessWidget {
   const LearningPage({super.key});
 
@@ -178,6 +179,8 @@ class LearningPage extends StatelessWidget {
   }
 }
 
+/// A card widget that displays learning content with an image and title
+/// Tapping the card opens the associated URL
 class LearningCard extends StatelessWidget {
   final String title;
   final String imageUrl;

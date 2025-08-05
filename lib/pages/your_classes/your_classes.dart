@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
         const EmojiText(),
         const SearchInput(),
         WebDeveloperFeatureCourse(),
-        FeatureCourse2(),
+        ProgrammerFeatureCourse(),
         MobileAppFeatureCourse()
       ],
     ),
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                   border:
-                      Border.all(color: kFontLight.withOpacity(0.3), width: 2),
+                      Border.all(color: kFontLight.withValues(alpha: 0.3), width: 2),
                   borderRadius: BorderRadius.circular(15)),
               child: const Icon(
                 Icons.circle_notifications_outlined,

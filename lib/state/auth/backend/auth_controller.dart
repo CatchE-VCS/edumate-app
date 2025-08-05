@@ -2,11 +2,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+/// Authentication controller that handles Firebase Auth operations
+/// including email/password authentication, Google Sign-In, and password reset.
 class AuthController {
   final firebaseAuth = FirebaseAuth.instance;
-  // final firebaseStorage = FirebaseStor
+  
+  /// Stream that provides authentication state changes
   Stream<User?> get authChanges => firebaseAuth.authStateChanges();
 
+  /// Sends a password reset email to the specified email address
+  /// Returns 'success' if email was sent, or error message if failed
   Future<String> sendPasswordResetEmail(String email) async {
     String result = 'Some error occurred';
     try {
@@ -48,6 +53,8 @@ class AuthController {
   //   return emailValid;
   // }
 
+  /// Handles Google Sign-In authentication
+  /// Returns 'success', 'new_user', or error message
   Future<String> signInWithGoogle() async {
     String result = 'Some error occurred';
     try {
@@ -83,6 +90,8 @@ class AuthController {
     return result;
   }
 
+  /// Creates a new user account with email and password
+  /// Returns 'success' if account was created, or error message if failed
   Future<String> signUpUser(String email, String password, String firstName) async {
     String result = 'Some error occurred';
     try {

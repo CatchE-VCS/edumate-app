@@ -11,7 +11,7 @@ class GetPage extends StatefulWidget {
   State<GetPage> createState() => _GetPageState();
 }
 
- List<NewsModel> _userModel = [];
+// Removed unused _userModel variable
 
 class _GetPageState extends State<GetPage> {
   Future<List<NewsModel>> getData() async {
@@ -20,11 +20,10 @@ class _GetPageState extends State<GetPage> {
     if (response.statusCode == 200) {
       String data = response.body;
       // print(response.body);
-      print(jsonDecode(data));
+      // Debug: print(jsonDecode(data));
       return newsModelFromJson(data);
     } else {
-      print(response.statusCode);
-      print(response.body);
+      // Error: Status ${response.statusCode}, Body: ${response.body}
       return [];
     }
   }

@@ -18,7 +18,7 @@ class _BottomNavState extends State<BottomNav> {
 
   Map<int, bool> selected = {0: true, 1: false, 2: false, 3: false, 4: false};
 
-  changeBottomtab(int x) {
+  changeBottomTab(int x) {
     setState(() {
       for (int i = 0; i < 5; i++) {
         if (x == i) {
@@ -39,27 +39,27 @@ class _BottomNavState extends State<BottomNav> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.of(widget.context).size.width * 0.06,
-          vertical: 10),
+        horizontal: MediaQuery.of(widget.context).size.width * 0.06,
+        vertical: 10,
+      ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Container(
           height: 56,
-          padding: const EdgeInsets.symmetric(
-            horizontal: 7.0,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 7.0),
           decoration: BoxDecoration(
             gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color(0x66582796),
-                  Color(0x666F3CB1),
-                  Color(0x667C46C1),
-                  Color(0x667C46C1),
-                  Color(0x666F3CB1),
-                  Color(0x66582796),
-                ]),
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0x66582796),
+                Color(0x666F3CB1),
+                Color(0x667C46C1),
+                Color(0x667C46C1),
+                Color(0x666F3CB1),
+                Color(0x66582796),
+              ],
+            ),
             // border: Border.all(color: Color(0xffEEEEEE), width: 1),
             borderRadius: const BorderRadius.all(Radius.elliptical(20, 20)),
             color: Colors.white,
@@ -69,7 +69,7 @@ class _BottomNavState extends State<BottomNav> {
                 color: Colors.grey,
                 blurStyle: BlurStyle.outer,
                 blurRadius: 3,
-              )
+              ),
             ],
           ),
           child: Row(
@@ -77,37 +77,39 @@ class _BottomNavState extends State<BottomNav> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               BottomNavTab(
-                  val: 0,
-                  icon: Icons.home_rounded,
-                  text: "Home",
-                  selected: selected[0],
-                  callback: changeBottomtab),
+                val: 0,
+                icon: Icons.home_rounded,
+                text: "Home",
+                selected: selected[0],
+                callback: changeBottomTab,
+              ),
               BottomNavTab(
-                  val: 1,
-                  icon: Icons.tips_and_updates,
-                  text: "Skills",
-                  selected: selected[1],
-                  callback: changeBottomtab),
+                val: 1,
+                icon: Icons.tips_and_updates,
+                text: "Skills",
+                selected: selected[1],
+                callback: changeBottomTab,
+              ),
               BottomNavTab(
                 val: 2,
                 icon: Icons.movie,
                 text: "Reels",
                 selected: selected[2],
-                callback: changeBottomtab,
+                callback: changeBottomTab,
               ),
               BottomNavTab(
                 val: 3,
                 icon: Icons.location_on_outlined,
                 text: "Roadmap",
                 selected: selected[3],
-                callback: changeBottomtab,
+                callback: changeBottomTab,
               ),
               BottomNavTab(
                 val: 4,
                 icon: Icons.savings_outlined,
                 text: "Coins",
                 selected: selected[4],
-                callback: changeBottomtab,
+                callback: changeBottomTab,
               ),
               // Container(
               //   width: selected[3]! ? 108 : 68,
