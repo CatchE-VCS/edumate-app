@@ -45,7 +45,7 @@ class _NewHomePageState extends State<NewHomePage>
       ),
       child: SafeArea(
         child: Scaffold(
-          drawer: Drawer(child: DrawerScreen()),
+          drawer: Drawer(child: CustomDrawer()),
           extendBody: true,
           bottomNavigationBar: BottomNav(context: context),
           backgroundColor: Colors.transparent,

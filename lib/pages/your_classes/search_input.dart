@@ -2,7 +2,7 @@ import 'package:edumate/themes/color.dart';
 import 'package:flutter/material.dart';
 
 class SearchInput extends StatelessWidget {
-  const SearchInput({Key? key}) : super(key: key);
+  const SearchInput({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +12,12 @@ class SearchInput extends StatelessWidget {
             margin: const EdgeInsets.all(25),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: kFontLight.withOpacity(0.3), width: 2),
+              border: Border.all(color: kFontLight.withValues(alpha: 0.3), width: 2),
             ),
             child: TextField(
               cursorColor: kFontLight,
               decoration: InputDecoration(
-                fillColor: kFontLight.withOpacity(0.1),
+                fillColor: kFontLight.withValues(alpha: 0.1),
                 filled: true,
                 contentPadding: const EdgeInsets.all(18),
                 border: InputBorder.none,

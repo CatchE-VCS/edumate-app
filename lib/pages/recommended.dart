@@ -1,5 +1,5 @@
 import 'package:edumate/helpers/course_model.dart';
-import 'package:edumate/helpers/quad-clipper.dart';
+import 'package:edumate/helpers/quad_clipper.dart';
 import 'package:edumate/pages/home_page.dart';
 import 'package:edumate/themes/light_color.dart';
 import 'package:edumate/themes/themes.dart';

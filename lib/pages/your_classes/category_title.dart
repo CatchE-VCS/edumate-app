@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 class CategoryTitle extends StatelessWidget {
   final String leftText;
   final String rightText;
-  // ignore: use_key_in_widget_constructors, prefer_const_constructors_in_immutables
-  CategoryTitle(this.leftText, this.rightText);
+  const CategoryTitle(this.leftText, this.rightText, {super.key});
 
   @override
   Widget build(BuildContext context) {

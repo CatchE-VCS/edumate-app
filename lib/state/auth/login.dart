@@ -1,4 +1,4 @@
-import 'package:edumate/googleauth.dart/googleauth.dart';
+import 'package:edumate/state/auth/backend/auth_controller.dart';
 import 'package:edumate/pages/newhome.dart';
 import 'package:edumate/pages/registration_page.dart';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
@@ -20,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
     // setState(() {
     //   _isLoading = true;
     // });
-    String res = await _authController.signinWithGoogle();
+    String res = await _authController.signInWithGoogle();
     if (res != 'success') {
       // setState(() {
       //   _isLoading = false;

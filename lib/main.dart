@@ -1,3 +1,11 @@
+// Flutter imports
+import 'package:flutter/material.dart';
+
+// Third-party package imports
+import 'package:firebase_core/firebase_core.dart';
+import 'package:overlay_support/overlay_support.dart';
+
+// Local imports
 import 'package:edumate/firebase_options.dart';
 import 'package:edumate/pages/coins.dart';
 import 'package:edumate/pages/contest_page.dart';
@@ -8,11 +16,7 @@ import 'package:edumate/pages/skill_page.dart';
 import 'package:edumate/pages/splash_page.dart';
 import 'package:edumate/src/settings/settings_controller.dart';
 import 'package:edumate/src/settings/settings_service.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
-import 'package:overlay_support/overlay_support.dart';
-
-import 'themes/themes.dart';
+import 'package:edumate/themes/themes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

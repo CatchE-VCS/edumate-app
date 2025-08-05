@@ -7,19 +7,19 @@ class AuthController {
   // final firebaseStorage = FirebaseStor
   Stream<User?> get authChanges => firebaseAuth.authStateChanges();
 
-  forgotPassword(String email) async {
-    String res = 'Some error occured';
+  Future<String> sendPasswordResetEmail(String email) async {
+    String result = 'Some error occurred';
     try {
       if (email.isNotEmpty) {
         await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
-        res = 'success';
+        result = 'success';
       } else {
-        res = 'Email field must not be empty';
+        result = 'Email field must not be empty';
       }
     } catch (e) {
-      res = e.toString();
+      result = e.toString();
     }
-    return res;
+    return result;
   }
 
 //   validatePassword(String pass) {
@@ -48,8 +48,8 @@ class AuthController {
   //   return emailValid;
   // }
 
-  signinWithGoogle() async {
-    String res = 'Some error occured';
+  Future<String> signInWithGoogle() async {
+    String result = 'Some error occurred';
     try {
       final GoogleSignIn googleSignIn = GoogleSignIn.instance;
       GoogleSignInAccount? googleUser = await googleSignIn.authenticate();
@@ -70,25 +70,26 @@ class AuthController {
           //   'email': user.email,
           //   'userImage': user.photoURL,
           // });
-          return res = "new user";
+          result = "new_user";
+          return result;
         }
       }
-      res = 'success';
+      result = 'success';
     } on FirebaseAuthException catch (e) {
       print(e);
     } catch (e) {
-      res = e.toString();
+      result = e.toString();
     }
-    return res;
+    return result;
   }
 
-  Future<String> signUpUser(String email, String pass, String fName) async {
-    String res = 'Some error occurred';
+  Future<String> signUpUser(String email, String password, String firstName) async {
+    String result = 'Some error occurred';
     try {
       UserCredential userCredential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
-        password: pass,
+        password: password,
       );
       String downloadUrl;
       // if (image != null) {
@@ -110,46 +111,46 @@ class AuthController {
         //   'userImage': downloadUrl,
         // });
       }
-      res = 'success';
+      result = 'success';
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        res = 'The password provided is too weak.';
+        result = 'The password provided is too weak.';
       } else if (e.code == 'email-already-in-use') {
-        res = 'The account already exists for that email.';
+        result = 'The account already exists for that email.';
       }
     } catch (e) {
-      res = e.toString();
+      result = e.toString();
     }
     // print(res);
-    return res;
+    return result;
   }
 
-  loginUsers(String email, String pass) async {
-    String res = 'Some error occured';
+  Future<String> signInWithEmailPassword(String email, String password) async {
+    String result = 'Some error occurred';
     try {
-      if (email.isNotEmpty && pass.isNotEmpty) {
+      if (email.isNotEmpty && password.isNotEmpty) {
         UserCredential userCredential = await FirebaseAuth.instance
-            .signInWithEmailAndPassword(email: email, password: pass);
-        res = 'success';
+            .signInWithEmailAndPassword(email: email, password: password);
+        result = 'success';
       } else {
-        res = 'Fields must not be empty';
+        result = 'Fields must not be empty';
       }
 
       // print("Signed in");
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        res = 'No user found for this email.';
+        result = 'No user found for this email.';
       } else if (e.code == 'wrong-password') {
-        res = 'Incorrect password';
+        result = 'Incorrect password';
       }
     } catch (e) {
-      res = e.toString();
+      result = e.toString();
     }
-    return res;
+    return result;
   }
   // git client secret 0a443c074eb2a80e4e060483b4695feeaabc533d
 
-  authSignOut() async {
+  Future<void> signOut() async {
     try {
       await FirebaseAuth.instance.signOut();
       print("Signed Out");
@@ -162,6 +163,9 @@ class AuthController {
   }
 }
 
-showSnackBarr(String content, BuildContext context) {
-  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(content)));
+void showSnackBarr(String content, BuildContext context) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(content)),
+  );
 }
+

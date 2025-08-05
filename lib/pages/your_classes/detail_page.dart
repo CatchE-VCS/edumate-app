@@ -1,12 +1,12 @@
 import 'package:edumate/pages/your_classes/course.dart';
 import 'package:edumate/pages/your_classes/course_desc.dart';
-import 'package:edumate/pages/your_classes/courseProgress.dart';
-import 'package:edumate/pages/your_classes/customAppBar.dart';
+import 'package:edumate/pages/your_classes/course_progress.dart';
+import 'package:edumate/pages/your_classes/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
   final Course course;
-  DetailPage(this.course);
+  const DetailPage( {super.key, required this.course,});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,7 +39,7 @@ class DetailPage extends StatelessWidget {
 
 class DetailPage1 extends StatelessWidget {
   final Course1 course1;
-  DetailPage1(this.course1);
+  const DetailPage1(this.course1);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -72,7 +72,7 @@ class DetailPage1 extends StatelessWidget {
 
 class DetailPage2 extends StatelessWidget {
   final Course2 course2;
-  DetailPage2(this.course2);
+  const DetailPage2(this.course2);
   @override
   Widget build(BuildContext context) {
     return Container(

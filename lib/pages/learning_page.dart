@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class NN extends StatelessWidget {
-  const NN({super.key});
+class LearningPage extends StatelessWidget {
+  const LearningPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -178,17 +178,17 @@ class NN extends StatelessWidget {
   }
 }
 
-class Container1 extends StatelessWidget {
-  final String text;
-  final String img;
-  final String urle;
+class LearningCard extends StatelessWidget {
+  final String title;
+  final String imageUrl;
+  final String linkUrl;
   
-  const Container1({super.key, required this.text, required this.img, required this.urle});
+  const LearningCard({super.key, required this.title, required this.imageUrl, required this.linkUrl});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        String url = urle;
+        String url = linkUrl;
         final uri = Uri.parse(url);
         if (await canLaunchUrl(uri)) {
           await launchUrl(uri);
@@ -236,7 +236,7 @@ class Container1 extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(left: 20),
                 child: Text(
-                  text,
+                  title,
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
                 ),
               ),
@@ -263,24 +263,24 @@ class Container1 extends StatelessWidget {
           SizedBox(
             width: 17,
           ),
-          Image.asset(img)
+          Image.asset(imageUrl)
         ]),
       ),
     );
   }
 }
 
-class Container2 extends StatelessWidget {
-  final String text;
-  final String img;
-  final String urle;
+class SecondaryLearningCard extends StatelessWidget {
+  final String title;
+  final String imageUrl;
+  final String linkUrl;
   
-  const Container2({super.key, required this.text, required this.img, required this.urle});
+  const SecondaryLearningCard({super.key, required this.title, required this.imageUrl, required this.linkUrl});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () async {
-          String url = urle;
+          String url = linkUrl;
           final uri = Uri.parse(url);
           if (await canLaunchUrl(uri)) {
             await launchUrl(uri);
@@ -329,7 +329,7 @@ class Container2 extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(left: 20),
                   child: Text(
-                    text,
+                    title,
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
                   ),
                 ),

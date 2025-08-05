@@ -1,4 +1,4 @@
-import 'package:edumate/helpers/quad-clipper.dart';
+import 'package:edumate/helpers/quad_clipper.dart';
 import 'package:edumate/pages/skill_page.dart';
 import 'package:edumate/themes/light_color.dart';
 import 'package:edumate/widgets/bottom_nav.dart';
@@ -53,7 +53,7 @@ class HomePage extends StatelessWidget {
                               onPressed: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => DrawerScreen()),
+                                        builder: (context) => CustomDrawer()),
                                   )),
                           SizedBox(height: 10),
                           Row(

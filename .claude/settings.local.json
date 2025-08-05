@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(fvm flutter:*)",
+      "Bash(move:*)",
+      "Bash(mv:*)",
+      "Bash(rmdir:*)"
+    ],
+    "deny": []
+  }
+}

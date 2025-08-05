@@ -1,7 +1,7 @@
 import 'package:edumate/pages/newhome.dart';
 import 'package:edumate/pages/your_classes/emoji.dart';
 import 'package:edumate/pages/your_classes/feature_course.dart';
-import 'package:edumate/pages/your_classes/searchInput.dart';
+import 'package:edumate/pages/your_classes/search_input.dart';
 import 'package:edumate/themes/color.dart';
 import 'package:edumate/widgets/bottom_nav.dart';
 import 'package:flutter/material.dart';
@@ -21,9 +21,9 @@ class _HomePageState extends State<HomePage> {
         const Con(),
         const EmojiText(),
         const SearchInput(),
-        FeatureCourse1(),
+        WebDeveloperFeatureCourse(),
         FeatureCourse2(),
-        FeatureCourse()
+        MobileAppFeatureCourse()
       ],
     ),
     Text('Form'),

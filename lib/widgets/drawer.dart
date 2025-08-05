@@ -1,16 +1,16 @@
 import 'package:edumate/pages/profile_page.dart';
 import 'package:flutter/material.dart';
 
-class DrawerScreen extends StatelessWidget {
-  const DrawerScreen({Key? key}) : super(key: key);
+class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff705cdc),
+      backgroundColor: const Color(0xff705cdc),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Color(0xff705cdc),
+        backgroundColor: const Color(0xff705cdc),
         leading: Builder(
 
           builder: (context) {

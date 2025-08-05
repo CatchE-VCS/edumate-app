@@ -3,12 +3,14 @@ import 'package:edumate/pages/your_classes/course.dart';
 import 'package:edumate/pages/your_classes/course_item.dart';
 import 'package:flutter/material.dart';
 
-class FeatureCourse3 extends StatelessWidget {
+class AssistantFeatureCourse extends StatelessWidget {
+  const AssistantFeatureCourse({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CategoryTitle('Assistant', ' '),
+        const CategoryTitle('Assistant', ' '),
 
         // ignore: sized_box_for_whitespace
         ElevatedButton(
@@ -20,24 +22,26 @@ class FeatureCourse3 extends StatelessWidget {
             //               title: 'edumate',
             //             )));
           },
-          child: Text('Open'),
+          child: const Text('Open'),
         ),
       ],
     );
   }
 }
 
-class FeatureCourse extends StatelessWidget {
+class MobileAppFeatureCourse extends StatelessWidget {
+  MobileAppFeatureCourse({super.key});
+  
   final coursesList = Course.generateCourses();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CategoryTitle('Mobile App Developer', 'View All'),
+        const CategoryTitle('Mobile App Developer', 'View All'),
 
         Container(
-          decoration: BoxDecoration(),
+          decoration: const BoxDecoration(),
           height: 300,
           child: ListView.separated(
             padding: const EdgeInsets.all(25),
@@ -53,14 +57,16 @@ class FeatureCourse extends StatelessWidget {
   }
 }
 
-class FeatureCourse1 extends StatelessWidget {
+class WebDeveloperFeatureCourse extends StatelessWidget {
+  WebDeveloperFeatureCourse({super.key});
+  
   final coursesList1 = Course1.generateCourses1();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CategoryTitle('Web Developer', 'View All'),
+        const CategoryTitle('Web Developer', 'View All'),
         SizedBox(
           height: 300,
           child: ListView.separated(
@@ -77,15 +83,16 @@ class FeatureCourse1 extends StatelessWidget {
 }
 
 class FeatureCourse2 extends StatelessWidget {
-  final coursesList2 = Course2.generateCourses2();
+  static final coursesList2 = Course2.generateCourses2();
+
+  const FeatureCourse2({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         CategoryTitle('Programmer', 'View All'),
-        // ignore: sized_box_for_whitespace
-        Container(
+        SizedBox(
           height: 300,
           child: ListView.separated(
             padding: const EdgeInsets.all(25),
