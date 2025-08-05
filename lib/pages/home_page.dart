@@ -8,7 +8,7 @@ import 'package:edumate/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   Widget _header(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
