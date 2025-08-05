@@ -4,7 +4,8 @@
       "Bash(fvm flutter:*)",
       "Bash(move:*)",
       "Bash(mv:*)",
-      "Bash(rmdir:*)"
+      "Bash(rmdir:*)",
+      "Bash(fvm dart run build_runner build:*)"
     ],
     "deny": []
   }

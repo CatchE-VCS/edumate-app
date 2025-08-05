@@ -185,7 +185,7 @@ class CourseProgressGrid extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           ThemeAwareText(
-            text: module.name,
+            text: module.title,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,

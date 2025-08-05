@@ -76,7 +76,7 @@ class CourseModule extends StatelessWidget {
                     module.desc,
                     style: TextStyle(
                       fontSize: 18,
-                      color: kFont.withOpacity(0.7),
+                      color: kFont.withValues(alpha: 0.7),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -84,7 +84,7 @@ class CourseModule extends StatelessWidget {
                   ElevatedButton(
                     child: Text('Play'),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: kFontLight.withOpacity(1),
+                      backgroundColor: kFontLight.withValues(alpha: 1),
                       elevation: 0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -209,7 +209,7 @@ class CourseModule1 extends StatelessWidget {
                     module1.desc,
                     style: TextStyle(
                       fontSize: 18,
-                      color: kFont.withOpacity(0.7),
+                      color: kFont.withValues(alpha: 0.7),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -217,7 +217,7 @@ class CourseModule1 extends StatelessWidget {
                   ElevatedButton(
                     child: Text('Play'),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: kFontLight.withOpacity(1),
+                      backgroundColor: kFontLight.withValues(alpha: 1),
                       elevation: 0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
@@ -342,7 +342,7 @@ class CourseModule2 extends StatelessWidget {
                     module2.desc,
                     style: TextStyle(
                       fontSize: 18,
-                      color: kFont.withOpacity(0.7),
+                      color: kFont.withValues(alpha: 0.7),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -350,7 +350,7 @@ class CourseModule2 extends StatelessWidget {
                   ElevatedButton(
                     child: Text('Play'),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: kFontLight.withOpacity(1),
+                      backgroundColor: kFontLight.withValues(alpha: 1),
                       elevation: 0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),

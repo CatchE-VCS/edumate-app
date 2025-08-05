@@ -1,5 +1,6 @@
 import 'dart:developer' as developer;
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 /// Performance monitoring utility for tracking app performance
 class PerformanceMonitor {

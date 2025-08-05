@@ -133,4 +133,7 @@ extension ResponsiveContext on BuildContext {
   /// Get responsive font size
   double responsiveFontSize(double baseFontSize) => 
       ResponsiveUtils.getResponsiveFontSize(this, baseFontSize);
+  
+  /// Get grid column count
+  int getGridColumnCount() => ResponsiveUtils.getGridColumnCount(this);
 }
