@@ -8,10 +8,10 @@ import 'package:video_player/video_player.dart';
 class ContentScreen extends StatefulWidget {
   final String src;
 
-  const ContentScreen({Key? key, required this.src}) : super(key: key);
+  const ContentScreen({super.key, required this.src});
 
   @override
-  _ContentScreenState createState() => _ContentScreenState();
+  State<ContentScreen> createState() => _ContentScreenState();
 }
 
 class _ContentScreenState extends State<ContentScreen> {
@@ -25,7 +25,9 @@ class _ContentScreenState extends State<ContentScreen> {
   }
 
   Future initializePlayer() async {
-    _videoPlayerController = VideoPlayerController.network(widget.src);
+    // Initialize the video player controller with the network URL
+    final Uri videoUrl = Uri.parse(widget.src);
+    _videoPlayerController = VideoPlayerController.networkUrl(videoUrl);
     await Future.wait([_videoPlayerController!.initialize()]);
     _chewieController = ChewieController(
       videoPlayerController: _videoPlayerController!,

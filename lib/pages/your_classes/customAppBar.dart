@@ -1,4 +1,4 @@
-import 'package:edumate/pages/yourclasses/course.dart';
+import 'package:edumate/pages/your_classes/course.dart';
 import 'package:edumate/themes/color.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +39,7 @@ class CustomAppBar extends StatelessWidget {
             child: ElevatedButton(
               child: Text('Start Intro'),
               style: ElevatedButton.styleFrom(
-                  primary: kAccent,
+                  backgroundColor: kAccent,
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15))),
@@ -136,7 +136,7 @@ class CustomAppBar1 extends StatelessWidget {
             child: ElevatedButton(
               child: Text('Start Intro'),
               style: ElevatedButton.styleFrom(
-                  primary: kAccent,
+                  backgroundColor: kAccent,
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15))),
@@ -233,7 +233,7 @@ class CustomAppBar2 extends StatelessWidget {
             child: ElevatedButton(
               child: Text('Start Intro'),
               style: ElevatedButton.styleFrom(
-                  primary: kAccent,
+                  backgroundColor: kAccent,
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15))),

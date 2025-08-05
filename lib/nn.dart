@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NN extends StatelessWidget {
+  const NN({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -177,10 +179,11 @@ class NN extends StatelessWidget {
 }
 
 class Container1 extends StatelessWidget {
-  String text;
-  String img;
-  String urle;
-  Container1({required this.text, required this.img, required this.urle});
+  final String text;
+  final String img;
+  final String urle;
+  
+  const Container1({super.key, required this.text, required this.img, required this.urle});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -268,10 +271,11 @@ class Container1 extends StatelessWidget {
 }
 
 class Container2 extends StatelessWidget {
-  String text;
-  String img;
-  String urle;
-  Container2({required this.text, required this.img, required this.urle});
+  final String text;
+  final String img;
+  final String urle;
+  
+  const Container2({super.key, required this.text, required this.img, required this.urle});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

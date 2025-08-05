@@ -60,7 +60,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     //Navigator.of(context).pop();
                   },
                   icon: Icon(Icons.arrow_back_ios)),
-                  backgroundColor: Color(0x00fffff),
+                  backgroundColor: Color(0x00ffffff),
                   centerTitle: true,
                 title: Text('Profile'),
               ),

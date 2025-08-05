@@ -1,7 +1,7 @@
-import 'package:edumate/pages/yourclasses/course.dart';
-import 'package:edumate/pages/yourclasses/courseDesc.dart';
-import 'package:edumate/pages/yourclasses/courseProgress.dart';
-import 'package:edumate/pages/yourclasses/customAppBar.dart';
+import 'package:edumate/pages/your_classes/course.dart';
+import 'package:edumate/pages/your_classes/course_desc.dart';
+import 'package:edumate/pages/your_classes/courseProgress.dart';
+import 'package:edumate/pages/your_classes/customAppBar.dart';
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {

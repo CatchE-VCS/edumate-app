@@ -1,12 +1,12 @@
-import 'package:edumate/helpers/courseModel.dart';
+import 'package:edumate/helpers/course_model.dart';
 import 'package:edumate/helpers/quad-clipper.dart';
 import 'package:edumate/pages/home_page.dart';
 import 'package:edumate/themes/light_color.dart';
 import 'package:edumate/themes/themes.dart';
 import 'package:flutter/material.dart';
 
-class RecomendedPage extends StatelessWidget {
-  const RecomendedPage({Key? key}) : super(key: key);
+class RecommendedPage extends StatelessWidget {
+  const RecommendedPage({super.key});
 
   Widget _header(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -79,7 +79,7 @@ class RecomendedPage extends StatelessWidget {
   }
 
   Widget _categoryRow(BuildContext context, String title) {
-    return Container(
+    return SizedBox(
       // margin: EdgeInsets.symmetric(horizontal: 20),
       height: 68,
       child: Column(
@@ -98,7 +98,7 @@ class RecomendedPage extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Container(
+          SizedBox(
               width: MediaQuery.of(context).size.width,
               height: 30,
               child: ListView(
@@ -123,29 +123,27 @@ class RecomendedPage extends StatelessWidget {
   Widget _courseList(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
-      child: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            _courceInfo(context, CourseList.list[0],
-                _decorationContainerA(Colors.redAccent, -110, -85),
-                background: LightColor.seeBlue),
-            Divider(
-              thickness: 1,
-              endIndent: 20,
-              indent: 20,
-            ),
-            _courceInfo(context, CourseList.list[1], _decorationContainerB(),
-                background: LightColor.darkOrange),
-            Divider(
-              thickness: 1,
-              endIndent: 20,
-              indent: 20,
-            ),
-            _courceInfo(context, CourseList.list[2], _decorationContainerC(),
-                background: LightColor.lightOrange2),
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          _courceInfo(context, CourseList.list[0],
+              _decorationContainerA(Colors.redAccent, -110, -85),
+              background: LightColor.seeBlue),
+          Divider(
+            thickness: 1,
+            endIndent: 20,
+            indent: 20,
+          ),
+          _courceInfo(context, CourseList.list[1], _decorationContainerB(),
+              background: LightColor.darkOrange),
+          Divider(
+            thickness: 1,
+            endIndent: 20,
+            indent: 20,
+          ),
+          _courceInfo(context, CourseList.list[2], _decorationContainerC(),
+              background: LightColor.lightOrange2),
+        ],
       ),
     );
   }
@@ -172,7 +170,7 @@ class RecomendedPage extends StatelessWidget {
 
   Widget _courceInfo(BuildContext context, CourseModel model, Widget decoration,
       {required Color background}) {
-    return Container(
+    return SizedBox(
         height: 170,
         width: MediaQuery.of(context).size.width - 20,
         child: Row(
@@ -187,32 +185,30 @@ class RecomendedPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 SizedBox(height: 15),
-                Container(
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: <Widget>[
-                      Expanded(
-                        child: Text(model.name,
-                            style: TextStyle(
-                                color: LightColor.purple,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold)),
-                      ),
-                      CircleAvatar(
-                        radius: 3,
-                        backgroundColor: background,
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(model.noOfCource,
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: <Widget>[
+                    Expanded(
+                      child: Text(model.name,
                           style: TextStyle(
-                            color: LightColor.grey,
-                            fontSize: 14,
-                          )),
-                      SizedBox(width: 10)
-                    ],
-                  ),
+                              color: LightColor.purple,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold)),
+                    ),
+                    CircleAvatar(
+                      radius: 3,
+                      backgroundColor: background,
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(model.noOfCource,
+                        style: TextStyle(
+                          color: LightColor.grey,
+                          fontSize: 14,
+                        )),
+                    SizedBox(width: 10)
+                  ],
                 ),
                 Text(model.university,
                     style: AppTheme.h6Style.copyWith(
@@ -384,15 +380,13 @@ class RecomendedPage extends StatelessWidget {
         },
       ),
       body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              _header(context),
-              SizedBox(height: 20),
-              _categoryRow(context, "Start a new career"),
-              _courseList(context)
-            ],
-          ),
+        child: Column(
+          children: <Widget>[
+            _header(context),
+            SizedBox(height: 20),
+            _categoryRow(context, "Start a new career"),
+            _courseList(context)
+          ],
         ),
       ),
     );

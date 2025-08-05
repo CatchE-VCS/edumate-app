@@ -35,22 +35,20 @@ class HomeScreen extends StatelessWidget {
         title: Text('Educational Shorts'),
       ),
       body: SafeArea(
-        child: Container(
-          child: Stack(
-            children: [
-              //We need swiper for every content
-              Swiper(
-                itemHeight: MediaQuery.of(context).size.height * 1.2,
-                itemBuilder: (BuildContext context, int index) {
-                  return ContentScreen(
-                    src: videos[index],
-                  );
-                },
-                itemCount: videos.length,
-                scrollDirection: Axis.vertical,
-              ),
-            ],
-          ),
+        child: Stack(
+          children: [
+            //We need swiper for every content
+            Swiper(
+              itemHeight: MediaQuery.of(context).size.height * 1.2,
+              itemBuilder: (BuildContext context, int index) {
+                return ContentScreen(
+                  src: videos[index],
+                );
+              },
+              itemCount: videos.length,
+              scrollDirection: Axis.vertical,
+            ),
+          ],
         ),
       ),
     );

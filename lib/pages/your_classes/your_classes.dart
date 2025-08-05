@@ -1,13 +1,13 @@
 import 'package:edumate/pages/newhome.dart';
-import 'package:edumate/pages/yourclasses/emoji.dart';
-import 'package:edumate/pages/yourclasses/featureCourse.dart';
-import 'package:edumate/pages/yourclasses/searchInput.dart';
+import 'package:edumate/pages/your_classes/emoji.dart';
+import 'package:edumate/pages/your_classes/feature_course.dart';
+import 'package:edumate/pages/your_classes/searchInput.dart';
 import 'package:edumate/themes/color.dart';
 import 'package:edumate/widgets/bottom_nav.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> {
 }
 
 class Con extends StatelessWidget {
-  const Con({Key? key}) : super(key: key);
+  const Con({super.key});
 
   @override
   Widget build(BuildContext context) {

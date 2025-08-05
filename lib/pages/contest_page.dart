@@ -102,7 +102,7 @@ class _ContestPageState extends State<ContestPage> {
             ),
           ),
           _open
-              ? Container(
+              ? SizedBox(
                   height: 500,
                   child: (label == "All") ?
                   FutureBuilder(
@@ -259,7 +259,7 @@ class _ContestPageState extends State<ContestPage> {
                     Navigator.pop(context);
                   },
                   icon: Icon(Icons.arrow_back_ios)),
-              backgroundColor: Color(0x00fffff),
+              backgroundColor: Color(0x000fffff),
               centerTitle: true,
               title: Text('Competitive Progamming'),
               bottom:  TabBar(
@@ -313,7 +313,7 @@ class _ContestPageState extends State<ContestPage> {
             ),
             Center(
               child: Text(
-                "$name",
+                name,
                 style:
                     TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
@@ -332,7 +332,7 @@ class _ContestPageState extends State<ContestPage> {
                 }
               },
               child: Text(
-                "$date",
+                date,
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -344,7 +344,7 @@ class _ContestPageState extends State<ContestPage> {
               height: 15,
             ),
             Text(
-              "$endtime",
+              endtime,
               style:
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             )

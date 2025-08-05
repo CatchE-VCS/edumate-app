@@ -3,7 +3,7 @@ import 'package:share_plus/share_plus.dart';
 
 class OptionsScreen extends StatelessWidget {
   final String src;
-  const OptionsScreen({Key? key, required this.src}) : super(key: key);
+  const OptionsScreen({super.key, required this.src});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -39,7 +39,12 @@ class OptionsScreen extends StatelessWidget {
                     transform: Matrix4.rotationZ(5.8),
                     child: GestureDetector(
                       onTap: () async {
-                        await Share.share(src);
+                        await SharePlus.instance.share(
+                          ShareParams(
+                            text: 'Check out this video: $src',
+                            subject: 'Video Share',
+                          )
+                        );
                       },
                       child: Icon(
                         Icons.send,

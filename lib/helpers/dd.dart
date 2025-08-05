@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class GetPage extends StatefulWidget {
-  const GetPage({Key? key}) : super(key: key);
+  const GetPage({super.key});
 
   @override
   State<GetPage> createState() => _GetPageState();
 }
 
-late List<NewsModel> _userModel = [];
+ List<NewsModel> _userModel = [];
 
 class _GetPageState extends State<GetPage> {
   Future<List<NewsModel>> getData() async {

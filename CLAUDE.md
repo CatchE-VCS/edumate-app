@@ -9,17 +9,17 @@ Edumate is a Flutter-based educational app that provides learning content, conte
 ## Development Commands
 
 ### Core Flutter Commands
-- `flutter run` - Run the app in development mode
-- `flutter build apk` - Build Android APK
-- `flutter build ios` - Build iOS app
-- `flutter clean` - Clean build artifacts
-- `flutter pub get` - Install dependencies
-- `flutter pub upgrade` - Upgrade dependencies
+- `fvm flutter run` - Run the app in development mode
+- `fvm flutter build apk` - Build Android APK
+- `fvm flutter build ios` - Build iOS app
+- `fvm flutter clean` - Clean build artifacts
+- `fvm flutter pub get` - Install dependencies
+- `fvm flutter pub upgrade` - Upgrade dependencies
 
 ### Testing and Analysis
-- `flutter test` - Run widget tests
-- `flutter analyze` - Run static analysis (uses flutter_lints rules)
-- `dart format .` - Format Dart code
+- `fvm flutter test` - Run widget tests
+- `fvm flutter analyze` - Run static analysis (uses flutter_lints rules)
+- `fvm dart format .` - Format Dart code
 
 ### Firebase Configuration
 The app is configured with Firebase and requires proper setup of firebase_options.dart for different platforms.

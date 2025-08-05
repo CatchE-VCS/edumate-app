@@ -23,7 +23,7 @@ class Authenticator {
   Future<AuthResult> signInWithFacebook() async {
     // Trigger the sign-in flow
     final LoginResult loginResult = await FacebookAuth.instance.login();
-    final token = loginResult.accessToken!.token;
+    final token = loginResult.accessToken?.tokenString;
 
     if (token == null) {
       // user has aborts the login flow
@@ -31,13 +31,15 @@ class Authenticator {
     }
 
     // Create a credential from the access token
-    final OAuthCredential oAuthCredential =
-        FacebookAuthProvider.credential(token);
+    final OAuthCredential oAuthCredential = FacebookAuthProvider.credential(
+      token,
+    );
 
     try {
       // Once signed in, return the UserCredential
-      UserCredential userCredential =
-          await firebaseAuth.signInWithCredential(oAuthCredential);
+      UserCredential userCredential = await firebaseAuth.signInWithCredential(
+        oAuthCredential,
+      );
 
       // displayName = userCredential.user!.displayName;
 
@@ -49,41 +51,32 @@ class Authenticator {
       if (e.code == Constants.accountExistsWithDifferentCredential &&
           email != null &&
           credential != null) {
-        final providers = await firebaseAuth.fetchSignInMethodsForEmail(email);
-        providers.log();
-        if (providers.contains(Constants.googleCom)) {
+        try {
           await loginWithGoogle();
           firebaseAuth.currentUser?.linkWithCredential(credential);
           return AuthResult.successful;
-        } else if (e.code == 'invalid-credential') {
+        } catch (linkError) {
           // handle the error here
         }
+      } else if (e.code == 'invalid-credential') {
+        // handle the error here
       }
       return AuthResult.failure;
     }
   }
 
   Future<AuthResult> loginWithGoogle() async {
-    final GoogleSignIn googleSignIn = GoogleSignIn(
-      scopes: [
-        Constants.emailScope,
-      ],
-    );
+    final GoogleSignIn googleSignIn = GoogleSignIn.instance;
     // Trigger the authentication flow
-    final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
-
-    if (googleUser == null) {
-      // user has aborts the login flow
-      return AuthResult.aborted;
-    }
+    final GoogleSignInAccount googleUser = await googleSignIn.authenticate(
+      scopeHint: [Constants.emailScope],
+    );
 
     // Obtain the auth details from the request
-    final GoogleSignInAuthentication googleAuth =
-        await googleUser.authentication;
+    final GoogleSignInAuthentication googleAuth = googleUser.authentication;
 
     // Create a new credential
     final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
 
@@ -103,7 +96,8 @@ class Authenticator {
 
   Future<void> logout() async {
     await firebaseAuth.signOut();
-    await GoogleSignIn().signOut();
+    final GoogleSignIn googleSignIn = GoogleSignIn.instance;
+    await googleSignIn.signOut();
     await facebookAuth.logOut();
   }
 }

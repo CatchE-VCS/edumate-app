@@ -1,10 +1,10 @@
-import 'package:edumate/pages/yourclasses/category_title.dart';
+import 'package:edumate/pages/your_classes/category_title.dart';
 import 'package:edumate/themes/color.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class ActiveCourse extends StatelessWidget {
-  const ActiveCourse({Key? key}) : super(key: key);
+  const ActiveCourse({super.key});
 
   @override
   Widget build(BuildContext context) {

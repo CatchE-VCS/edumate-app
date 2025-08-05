@@ -51,11 +51,11 @@ class AuthController {
   signinWithGoogle() async {
     String res = 'Some error occured';
     try {
-      GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-      GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+      final GoogleSignIn googleSignIn = GoogleSignIn.instance;
+      GoogleSignInAccount? googleUser = await googleSignIn.authenticate();
+      GoogleSignInAuthentication googleAuth = googleUser.authentication;
       final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth?.accessToken,
-        idToken: googleAuth?.idToken,
+        idToken: googleAuth.idToken,
       );
       UserCredential userCredential =
           await FirebaseAuth.instance.signInWithCredential(credential);
@@ -75,15 +75,15 @@ class AuthController {
       }
       res = 'success';
     } on FirebaseAuthException catch (e) {
-      // print(e);
+      print(e);
     } catch (e) {
       res = e.toString();
     }
     return res;
   }
 
-  Future<String> signUpUser(String email, String pass, String fname) async {
-    String res = 'Some error occured';
+  Future<String> signUpUser(String email, String pass, String fName) async {
+    String res = 'Some error occurred';
     try {
       UserCredential userCredential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(

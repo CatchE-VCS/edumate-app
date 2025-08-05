@@ -1,6 +1,4 @@
 import 'package:edumate/helpers/quad-clipper.dart';
-import 'package:edumate/pages/profile_page.dart';
-import 'package:edumate/pages/reel/home_page.dart';
 import 'package:edumate/pages/skill_page.dart';
 import 'package:edumate/themes/light_color.dart';
 import 'package:edumate/widgets/bottom_nav.dart';
