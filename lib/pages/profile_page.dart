@@ -66,88 +66,86 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             body: Column(
               children: [
-               Container(
-                  child: Stack(
-                    children: <Widget>[
-                      // backWidget,
-                      Container(
-                        height: 250,
-                        color: const Color(0x00000000),
-                      ),
-                      Positioned(
-                        top: (MediaQuery.of(context).size.height * 0.09),
-                        left: (MediaQuery.of(context).size.width * 0.1),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(20)
-                            ),
-                          ),
-                          width: MediaQuery.of(context).size.width * 0.79,
-                          height: 170,
-                          padding: const EdgeInsets.only(bottom: 20, left: 30,),
-                          child: FittedBox(
-                            alignment: Alignment.centerLeft,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 10,),
-                                InkWell(
-                                  onTap: (){},
-                                  child: Icon(Icons.more_vert, color: Color(0xff2B2E44),),
-                                ),
-                                SizedBox(height: 15),
-                                Text(
-                                  "Utkarsh\nSingh",
-                                  style: TextStyle(
-                                    color: Color(0xff2B2E44),
-                                    fontSize: 28,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 9,
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "email@gmail.com",
-                                      style: TextStyle(
-                                        color: Color(0xff2B2E44),
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w400,
-                                      ),
+               Stack(
+                 children: <Widget>[
+                   // backWidget,
+                   Container(
+                     height: 250,
+                     color: const Color(0x00000000),
+                   ),
+                   Positioned(
+                     top: (MediaQuery.of(context).size.height * 0.09),
+                     left: (MediaQuery.of(context).size.width * 0.1),
+                     child: Container(
+                       decoration: BoxDecoration(
+                         color: Colors.white,
+                         borderRadius: BorderRadius.all(
+                           Radius.circular(20)
+                         ),
+                       ),
+                       width: MediaQuery.of(context).size.width * 0.79,
+                       height: 170,
+                       padding: const EdgeInsets.only(bottom: 20, left: 30,),
+                       child: FittedBox(
+                         alignment: Alignment.centerLeft,
+                         child: Column(
+                           mainAxisAlignment: MainAxisAlignment.end,
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                             SizedBox(height: 10,),
+                             InkWell(
+                               onTap: (){},
+                               child: Icon(Icons.more_vert, color: Color(0xff2B2E44),),
+                             ),
+                             SizedBox(height: 15),
+                             Text(
+                               "Utkarsh\nSingh",
+                               style: TextStyle(
+                                 color: Color(0xff2B2E44),
+                                 fontSize: 28,
+                                 fontWeight: FontWeight.bold,
+                               ),
+                             ),
+                             SizedBox(
+                               height: 9,
+                             ),
+                             Row(
+                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                               children: [
+                                 Text(
+                                   "email@gmail.com",
+                                   style: TextStyle(
+                                     color: Color(0xff2B2E44),
+                                     fontSize: 18,
+                                     fontWeight: FontWeight.w400,
+                                   ),
 
-                                    ),
-                                    // SizedBox(width: 50,),
-                                    Image.asset("assets/icons/write_icon.png"),
-
+                                 ),
+                                 // SizedBox(width: 50,),
+                                 Image.asset("assets/icons/write_icon.png"),
 
 
 
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        top: MediaQuery.of(context).size.height*0.01,
-                        left: (MediaQuery.of(context).size.width * 0.5 )-57,
-                        child: CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                          radius: 57,
-                          backgroundImage:
-                          const AssetImage('assets/images/profile.jpg'),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+
+                               ],
+                             ),
+                           ],
+                         ),
+                       ),
+                     ),
+                   ),
+                   Positioned(
+                     top: MediaQuery.of(context).size.height*0.01,
+                     left: (MediaQuery.of(context).size.width * 0.5 )-57,
+                     child: CircleAvatar(
+                       backgroundColor: Colors.transparent,
+                       radius: 57,
+                       backgroundImage:
+                       const AssetImage('assets/images/profile.jpg'),
+                     ),
+                   ),
+                 ],
+               ),
                 Container(
                   padding: const EdgeInsets.only(left: 45.0, top: 12, right: 45.0),
                   child: Column(

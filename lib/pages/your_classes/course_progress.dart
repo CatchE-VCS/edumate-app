@@ -1,4 +1,4 @@
-import 'package:edumate/pages/your_classes/courseModule.dart';
+import 'package:edumate/pages/your_classes/course_module.dart';
 import 'package:edumate/pages/your_classes/module.dart';
 import 'package:flutter/material.dart';
 

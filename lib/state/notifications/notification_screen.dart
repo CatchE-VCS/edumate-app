@@ -45,16 +45,14 @@ class _NotificationScreenState extends State<NotificationScreen> {
           _notificationInfo = notification;
         });
 
-        if (notification != null) {
-          showSimpleNotification(
-            Text(notification.dataTitle ?? notification.title!),
-            subtitle: Text(notification.dataBody ?? notification.body!),
-            background: Colors.blue,
-            leading:
-                NotificationBadge(totalNotification: _totalNotificationCounter),
-          );
-        }
-      });
+        showSimpleNotification(
+          Text(notification.dataTitle ?? notification.title!),
+          subtitle: Text(notification.dataBody ?? notification.body!),
+          background: Colors.blue,
+          leading:
+              NotificationBadge(totalNotification: _totalNotificationCounter),
+        );
+            });
     } else {
       print("User declined or has not accepted the permission");
     }

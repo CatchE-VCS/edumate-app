@@ -13,7 +13,7 @@ class BottomNavTab extends StatelessWidget {
   final IconData icon;
   final String text;
   final bool? selected;
-  final VoidCallback callback;
+  final void Function(int) callback;
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -118,9 +118,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 backgroundColor: Colors.white,
                 mini: false,
                 heroTag: "Google",
-                child: Container(
-                    child: CircleAvatar(
-                        child: Image.asset('assets/images/google.png'))),
+                child: CircleAvatar(
+                    child: Image.asset('assets/images/google.png')),
                 onPressed: () {
                   setState(() {
                     signInWithGoogle();

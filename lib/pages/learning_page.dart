@@ -134,45 +134,45 @@ class LearningPage extends StatelessWidget {
         SizedBox(
           height: 15,
         ),
-        Container1(
-          urle: 'https://www.udemy.com/course/photoshop-masking/',
-          text: "Graphic Design :\n Core Principles for\n Visual Design",
-          img: 'assets/images/first.png',
+        LearningCard(
+          linkUrl: 'https://www.udemy.com/course/photoshop-masking/',
+          title: "Graphic Design :\n Core Principles for\n Visual Design",
+          imageUrl: 'assets/images/first.png',
         ),
         SizedBox(
           height: 24,
         ),
-        Container2(
-          img: 'assets/images/third.png',
-          text: 'Create a Bold,\nColorful Album,\ngitCover',
-          urle:
+        SecondaryLearningCard(
+          imageUrl: 'assets/images/third.png',
+          title: 'Create a Bold,\nColorful Album,\ngitCover',
+          linkUrl:
               'https://www.udemy.com/course/adobe-photoshop-album-cover-design/',
         ),
         SizedBox(
           height: 24,
         ),
-        Container1(
-          urle:
+        LearningCard(
+          linkUrl:
               'https://www.udemy.com/course/premiere-pro-lumetri-color-correct-like-a-pro/',
-          text: "Premier Pro Lumetri\nColor Correct\nlike a Pro",
-          img: 'assets/images/first.png',
+          title: "Premier Pro Lumetri\nColor Correct\nlike a Pro",
+          imageUrl: 'assets/images/first.png',
         ),
         SizedBox(
           height: 24,
         ),
-        Container2(
-          img: 'assets/images/third.png',
-          text: 'Adobe Premiere Pro,\nMasterclass:Video',
-          urle:
+        SecondaryLearningCard(
+          imageUrl: 'assets/images/third.png',
+          title: 'Adobe Premiere Pro,\nMasterclass:Video',
+          linkUrl:
               'https://www.udemy.com/course/adobe-premiere-pro-video-editing/',
         ),
         SizedBox(
           height: 24,
         ),
-        Container1(
-          urle: 'https://www.udemy.com/course/incrediblevideocreator/',
-          text: "Filmmaker:\nVideo Creator",
-          img: 'assets/images/first.png',
+        LearningCard(
+          linkUrl: 'https://www.udemy.com/course/incrediblevideocreator/',
+          title: "Filmmaker:\nVideo Creator",
+          imageUrl: 'assets/images/first.png',
         ),
       ]),
     );

@@ -125,55 +125,53 @@ class HomePage extends StatelessWidget {
   Widget _featuredRowA(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            InkWell(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SkillScreen()));
-              },
-              child: _card(context,
-                  primary: LightColor.orange,
-                  backWidget:
-                      _decorationContainerA(LightColor.lightOrange, 50, -30),
-                  chipColor: LightColor.orange,
-                  chipText1: "Find the right skill for you",
-                  chipText2: "8 Cources",
-                  isPrimaryCard: true,
-                  imgPath:
-                      "https://d1mo3tzxttab3n.cloudfront.net/static/img/shop/560x580/vint0080.jpg"),
-            ),
-            _card(context,
-                primary: Colors.white,
-                chipColor: LightColor.seeBlue,
-                backWidget: _decorationContainerB(Colors.white, 90, -40),
-                chipText1: "Become a data scientist",
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: <Widget>[
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SkillScreen()));
+            },
+            child: _card(context,
+                primary: LightColor.orange,
+                backWidget:
+                    _decorationContainerA(LightColor.lightOrange, 50, -30),
+                chipColor: LightColor.orange,
+                chipText1: "Find the right skill for you",
                 chipText2: "8 Cources",
-                imgPath:
-                    "https://hips.hearstapps.com/esquireuk.cdnds.net/16/39/980x980/square-1475143834-david-gandy.jpg?resize=480:*"),
-            _card(context,
-                primary: Colors.white,
-                chipColor: LightColor.lightOrange,
-                backWidget: _decorationContainerC(Colors.white, 50, -30),
-                chipText1: "Become a digital marketer",
-                chipText2: "8 Cources",
-                imgPath:
-                    "https://www.visafranchise.com/wp-content/uploads/2019/05/patrick-findaro-visa-franchise-square.jpg"),
-            _card(context,
-                primary: Colors.white,
-                chipColor: LightColor.seeBlue,
-                backWidget: _decorationContainerD(LightColor.seeBlue, -50, 30,
-                    secondary: LightColor.lightseeBlue,
-                    secondaryAccent: LightColor.darkseeBlue),
-                chipText1: "Become a machine learner",
-                chipText2: "8 Cources",
+                isPrimaryCard: true,
                 imgPath:
                     "https://d1mo3tzxttab3n.cloudfront.net/static/img/shop/560x580/vint0080.jpg"),
-          ],
-        ),
+          ),
+          _card(context,
+              primary: Colors.white,
+              chipColor: LightColor.seeBlue,
+              backWidget: _decorationContainerB(Colors.white, 90, -40),
+              chipText1: "Become a data scientist",
+              chipText2: "8 Cources",
+              imgPath:
+                  "https://hips.hearstapps.com/esquireuk.cdnds.net/16/39/980x980/square-1475143834-david-gandy.jpg?resize=480:*"),
+          _card(context,
+              primary: Colors.white,
+              chipColor: LightColor.lightOrange,
+              backWidget: _decorationContainerC(Colors.white, 50, -30),
+              chipText1: "Become a digital marketer",
+              chipText2: "8 Cources",
+              imgPath:
+                  "https://www.visafranchise.com/wp-content/uploads/2019/05/patrick-findaro-visa-franchise-square.jpg"),
+          _card(context,
+              primary: Colors.white,
+              chipColor: LightColor.seeBlue,
+              backWidget: _decorationContainerD(LightColor.seeBlue, -50, 30,
+                  secondary: LightColor.lightseeBlue,
+                  secondaryAccent: LightColor.darkseeBlue),
+              chipText1: "Become a machine learner",
+              chipText2: "8 Cources",
+              imgPath:
+                  "https://d1mo3tzxttab3n.cloudfront.net/static/img/shop/560x580/vint0080.jpg"),
+        ],
       ),
     );
   }
@@ -181,59 +179,57 @@ class HomePage extends StatelessWidget {
   Widget _featuredRowB(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            _card(context,
-                primary: LightColor.seeBlue,
-                chipColor: LightColor.seeBlue,
-                backWidget: _decorationContainerD(
-                    LightColor.darkseeBlue, -100, -65,
-                    secondary: LightColor.lightseeBlue,
-                    secondaryAccent: LightColor.seeBlue),
-                chipText1: "English for career development ",
-                chipText2: "8 Cources",
-                isPrimaryCard: true,
-                imgPath:
-                    "https://www.reiss.com/media/product/946/218/silk-paisley-printed-pocket-square-mens-morocco-in-pink-red-20.jpg?format=jpeg&auto=webp&quality=85&width=1200&height=1200&fit=bounds"),
-            _card(context,
-                primary: Colors.white,
-                chipColor: LightColor.lightpurple,
-                backWidget: _decorationContainerE(
-                  LightColor.lightpurple,
-                  90,
-                  -40,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: <Widget>[
+          _card(context,
+              primary: LightColor.seeBlue,
+              chipColor: LightColor.seeBlue,
+              backWidget: _decorationContainerD(
+                  LightColor.darkseeBlue, -100, -65,
                   secondary: LightColor.lightseeBlue,
-                ),
-                chipText1: "Bussiness foundation",
-                chipText2: "8 Cources",
-                imgPath:
-                    "https://i.dailymail.co.uk/i/pix/2016/08/05/19/36E9139400000578-3725856-image-a-58_1470422921868.jpg"),
-            _card(context,
-                primary: Colors.white,
-                chipColor: LightColor.lightOrange,
-                backWidget: _decorationContainerF(
-                    LightColor.lightOrange, LightColor.orange, 50, -30),
-                chipText1: "Excel skill for business",
-                chipText2: "8 Cources",
-                imgPath:
-                    "https://www.reiss.com/media/product/945/066/03-2.jpg?format=jpeg&auto=webp&quality=85&width=632&height=725&fit=bounds"),
-            _card(context,
-                primary: Colors.white,
-                chipColor: LightColor.seeBlue,
-                backWidget: _decorationContainerA(
-                  Colors.white,
-                  -50,
-                  30,
-                ),
-                chipText1: "Beacame a data analyst",
-                chipText2: "8 Cources",
-                imgPath:
-                    "https://d1mo3tzxttab3n.cloudfront.net/static/img/shop/560x580/vint0080.jpg"),
-          ],
-        ),
+                  secondaryAccent: LightColor.seeBlue),
+              chipText1: "English for career development ",
+              chipText2: "8 Cources",
+              isPrimaryCard: true,
+              imgPath:
+                  "https://www.reiss.com/media/product/946/218/silk-paisley-printed-pocket-square-mens-morocco-in-pink-red-20.jpg?format=jpeg&auto=webp&quality=85&width=1200&height=1200&fit=bounds"),
+          _card(context,
+              primary: Colors.white,
+              chipColor: LightColor.lightpurple,
+              backWidget: _decorationContainerE(
+                LightColor.lightpurple,
+                90,
+                -40,
+                secondary: LightColor.lightseeBlue,
+              ),
+              chipText1: "Bussiness foundation",
+              chipText2: "8 Cources",
+              imgPath:
+                  "https://i.dailymail.co.uk/i/pix/2016/08/05/19/36E9139400000578-3725856-image-a-58_1470422921868.jpg"),
+          _card(context,
+              primary: Colors.white,
+              chipColor: LightColor.lightOrange,
+              backWidget: _decorationContainerF(
+                  LightColor.lightOrange, LightColor.orange, 50, -30),
+              chipText1: "Excel skill for business",
+              chipText2: "8 Cources",
+              imgPath:
+                  "https://www.reiss.com/media/product/945/066/03-2.jpg?format=jpeg&auto=webp&quality=85&width=632&height=725&fit=bounds"),
+          _card(context,
+              primary: Colors.white,
+              chipColor: LightColor.seeBlue,
+              backWidget: _decorationContainerA(
+                Colors.white,
+                -50,
+                30,
+              ),
+              chipText1: "Beacame a data analyst",
+              chipText2: "8 Cources",
+              imgPath:
+                  "https://d1mo3tzxttab3n.cloudfront.net/static/img/shop/560x580/vint0080.jpg"),
+        ],
       ),
     );
   }
@@ -247,7 +243,7 @@ class HomePage extends StatelessWidget {
       Color chipColor = LightColor.orange,
       bool isPrimaryCard = false}) {
     final width = MediaQuery.of(context).size.width;
-    ;
+
     return Container(
         height: isPrimaryCard ? 190 : 180,
         width: isPrimaryCard ? width * .32 : width * .32,
@@ -263,26 +259,24 @@ class HomePage extends StatelessWidget {
             ]),
         child: ClipRRect(
           borderRadius: BorderRadius.all(Radius.circular(20)),
-          child: Container(
-            child: Stack(
-              children: <Widget>[
-                backWidget,
-                Positioned(
-                    top: 20,
-                    left: 10,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.grey.shade300,
-                      // backgroundImage: NetworkImage(imgPath),
-                    )),
-                Positioned(
-                  bottom: 10,
+          child: Stack(
+            children: <Widget>[
+              backWidget,
+              Positioned(
+                  top: 20,
                   left: 10,
-                  child: _cardInfo(context, chipText1, chipText2,
-                      LightColor.titleTextColor, chipColor,
-                      isPrimaryCard: isPrimaryCard),
-                )
-              ],
-            ),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.grey.shade300,
+                    // backgroundImage: NetworkImage(imgPath),
+                  )),
+              Positioned(
+                bottom: 10,
+                left: 10,
+                child: _cardInfo(context, chipText1, chipText2,
+                    LightColor.titleTextColor, chipColor,
+                    isPrimaryCard: isPrimaryCard),
+              )
+            ],
           ),
         ));
   }
@@ -543,19 +537,17 @@ class HomePage extends StatelessWidget {
       //   },
       // ),
       body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              _header(context),
-              SizedBox(height: 20),
-              _categoryRow("Featured", LightColor.orange, LightColor.orange),
-              _featuredRowA(context),
-              SizedBox(height: 0),
-              _categoryRow(
-                  "Featured", LightColor.purple, LightColor.darkpurple),
-              _featuredRowB(context)
-            ],
-          ),
+        child: Column(
+          children: <Widget>[
+            _header(context),
+            SizedBox(height: 20),
+            _categoryRow("Featured", LightColor.orange, LightColor.orange),
+            _featuredRowA(context),
+            SizedBox(height: 0),
+            _categoryRow(
+                "Featured", LightColor.purple, LightColor.darkpurple),
+            _featuredRowB(context)
+          ],
         ),
       ),
     );

@@ -16,6 +16,7 @@ class SearchInput extends StatelessWidget {
             ),
             child: TextField(
               cursorColor: kFontLight,
+              textInputAction: TextInputAction.search,
               decoration: InputDecoration(
                 fillColor: kFontLight.withValues(alpha: 0.1),
                 filled: true,
@@ -23,6 +24,7 @@ class SearchInput extends StatelessWidget {
                 border: InputBorder.none,
                 hintText: 'Search for history, classes,...',
                 hintStyle: const TextStyle(color: kFontLight),
+                semanticLabel: 'Search courses and classes',
               ),
             )),
         Positioned(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class EmojiText extends StatelessWidget {
-  const EmojiText({Key? key}) : super(key: key);
+  const EmojiText({super.key});
 
   @override
   Widget build(BuildContext context) {

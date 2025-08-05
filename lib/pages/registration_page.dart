@@ -73,6 +73,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
   @override
   void initState() {
+    super.initState();
     _passwordVisible = false;
   }
 
@@ -268,10 +269,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           SizedBox(height: 40.0),
 
                           ElevatedButton(
-                            child: Text(
-                              "Register",
-                              style: TextStyle(fontSize: 20),
-                            ),
                             style: TextButton.styleFrom(
                               minimumSize: Size(100, 40),
                             ),
@@ -280,6 +277,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 register();
                               }
                             },
+                            child: Text(
+                              "Register",
+                              style: TextStyle(fontSize: 20),
+                            ),
                           ),
                           const SizedBox(height: 80.0),
                         ],

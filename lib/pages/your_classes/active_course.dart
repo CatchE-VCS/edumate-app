@@ -10,13 +10,13 @@ class ActiveCourse extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CategoryTitle('Currently Active', 'View All'),
+        const CategoryTitle('Currently Active', 'View All'),
         Container(
           margin: const EdgeInsets.all(25),
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
-              color: kFontLight.withOpacity(0.1),
-              border: Border.all(color: kFontLight.withOpacity(0.3), width: 1),
+              color: kFontLight.withValues(alpha: 0.1),
+              border: Border.all(color: kFontLight.withValues(alpha: 0.3), width: 1),
               borderRadius: BorderRadius.circular(8)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

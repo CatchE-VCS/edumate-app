@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class CourseDescription extends StatelessWidget {
   final Course course;
-  CourseDescription(this.course);
+  const CourseDescription(this.course, {super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -83,7 +83,7 @@ class CourseDescription extends StatelessWidget {
 
 class CourseDescription1 extends StatelessWidget {
   final Course1 course1;
-  CourseDescription1(this.course1);
+  const CourseDescription1(this.course1, {super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -165,7 +165,7 @@ class CourseDescription1 extends StatelessWidget {
 
 class CourseDescription2 extends StatelessWidget {
   final Course2 course2;
-  CourseDescription2(this.course2);
+  const CourseDescription2(this.course2, {super.key});
   @override
   Widget build(BuildContext context) {
     return Container(

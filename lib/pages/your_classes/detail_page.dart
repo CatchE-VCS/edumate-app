@@ -39,7 +39,7 @@ class DetailPage extends StatelessWidget {
 
 class DetailPage1 extends StatelessWidget {
   final Course1 course1;
-  const DetailPage1(this.course1);
+  const DetailPage1(this.course1, {super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -72,7 +72,7 @@ class DetailPage1 extends StatelessWidget {
 
 class DetailPage2 extends StatelessWidget {
   final Course2 course2;
-  const DetailPage2(this.course2);
+  const DetailPage2(this.course2, {super.key});
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class LightColor {
   static const Color background = Color(0XFFFFFFFF);
 
-  static const Color titleTextColor = const Color(0xff5a5d85);
-  static const Color subTitleTextColor = const Color(0xff797878);
+  static const Color titleTextColor = Color(0xff5a5d85);
+  static const Color subTitleTextColor = Color(0xff797878);
 
-  static const Color bottonTitleTextColor = const Color(0xffd4d4ea);
+  static const Color bottonTitleTextColor = Color(0xffd4d4ea);
 
   static const Color grey = Color(0xff9D99A7);
   static const Color darkgrey = Color(0xff625f6a);

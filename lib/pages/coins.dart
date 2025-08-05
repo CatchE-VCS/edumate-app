@@ -3,7 +3,7 @@ import 'package:edumate/widgets/bottom_nav.dart';
 import 'package:flutter/material.dart';
 
 class Coins extends StatelessWidget {
-  const Coins({Key? key}) : super(key: key);
+  const Coins({super.key});
 
   @override
   Widget build(BuildContext context) {

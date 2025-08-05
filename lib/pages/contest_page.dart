@@ -1,16 +1,14 @@
-import 'dart:convert';
 
 import 'package:edumate/helpers/codeforces_contest_model.dart';
 import 'package:edumate/helpers/contest_model.dart';
 import 'package:edumate/widgets/bottom_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-// import 'package:flutter_svg/svgart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 
 class ContestPage extends StatefulWidget {
-  const ContestPage({Key? key}) : super(key: key);
+  const ContestPage({super.key});
 
   @override
   State<ContestPage> createState() => _ContestPageState();

@@ -2,7 +2,7 @@ import 'package:edumate/widgets/bottom_nav.dart';
 import 'package:flutter/material.dart';
 
 class Tshirt extends StatefulWidget {
-  const Tshirt({Key? key}) : super(key: key);
+  const Tshirt({super.key});
 
   @override
   State<Tshirt> createState() => _TshirtState();
