@@ -24,7 +24,7 @@ class SearchInput extends StatelessWidget {
                 border: InputBorder.none,
                 hintText: 'Search for history, classes,...',
                 hintStyle: const TextStyle(color: kFontLight),
-                semanticLabel: 'Search courses and classes',
+                labelText: 'Search courses and classes',
               ),
             )),
         Positioned(

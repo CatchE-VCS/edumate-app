@@ -31,7 +31,7 @@ class CourseProgress extends StatelessWidget {
                     width: 20,
                   ),
                   SizedBox(width: 3),
-                  Container(
+                  SizedBox(
                     width: 185,
                     height: 25,
                     child: Image.asset(
@@ -81,7 +81,7 @@ class CourseProgress1 extends StatelessWidget {
                     width: 20,
                   ),
                   SizedBox(width: 3),
-                  Container(
+                  SizedBox(
                     width: 185,
                     height: 25,
                     child: Image.asset(
@@ -131,7 +131,7 @@ class CourseProgress2 extends StatelessWidget {
                     width: 20,
                   ),
                   SizedBox(width: 3),
-                  Container(
+                  SizedBox(
                     width: 185,
                     height: 25,
                     child: Image.asset('assets/images/list.png'),
