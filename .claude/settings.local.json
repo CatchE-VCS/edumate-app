@@ -5,7 +5,23 @@
       "Bash(move:*)",
       "Bash(mv:*)",
       "Bash(rmdir:*)",
-      "Bash(fvm dart run build_runner build:*)"
+      "Bash(fvm dart run build_runner build:*)",
+      "Bash(mkdir -p core/config core/constants core/errors core/network core/utils core/localization data/datasources data/models data/repositories domain/entities domain/repositories domain/usecases presentation/pages presentation/widgets presentation/providers presentation/themes shared/animations shared/extensions shared/mixins)",
+      "Bash(xcopy config* coreconfig /E /I)",
+      "Bash(xcopy utilsresponsive_utils.dart coreutils )",
+      "Bash(xcopy utilsperformance_monitor.dart coreutils )",
+      "Bash(xcopy utilsasset_manager.dart coreutils )",
+      "Bash(xcopy utilstest_helpers.dart coreutils)",
+      "Bash(copy configapp_config.dart coreconfigapp_config.dart)",
+      "Bash(cp config/app_config.dart core/config/)",
+      "Bash(cp config/app_constants.dart core/config/)",
+      "Bash(cp utils/responsive_utils.dart core/utils/)",
+      "Bash(cp utils/performance_monitor.dart core/utils/)",
+      "Bash(cp utils/asset_manager.dart core/utils/)",
+      "Bash(cp utils/test_helpers.dart core/utils/)",
+      "Bash(cp:*)",
+      "Bash(ls)",
+      "Bash(true)"
     ],
     "deny": []
   }
